@@ -16,6 +16,7 @@ Users
 ### SQL Query
 $sql_command = "select * from users where username = '" . $_POST['username'];   
 $sql_command .= "' AND password = '" . $_POST['password'] . "'";   
+
 SELECT * FROM users WHERE username='<username>' AND password='<password>'
 
 ### Command that could be used to exploit the attack
@@ -43,10 +44,10 @@ The results after the malicious command are:
 Ensuring that there isn’t a user controllable input that is used directly in a SQL query can prevent injection attacks. You can do this through sanitizing the input, treating all input as a parameter, using regular expression to identify harmful code patterns and making sure that only necessary accounts have access to the database. 
 
 ## Code of a proper solution: 
-$con=mysqli_connect("localhost","user","password","db");
-$username = mysqli_real_escape_string($con, $_POST['username']); 
-$password = mysqli_real_escape_string($con, $_POST['password']); 
-$sql_command = "select * from users where username = '" . $username; $sql_command .= "' AND password = '" . $password . "'";
+$con=mysqli_connect("localhost","user","password","db");  
+$username = mysqli_real_escape_string($con, $_POST['username']);  
+$password = mysqli_real_escape_string($con, $_POST['password']);  
+$sql_command = "select * from users where username = '" . $username; $sql_command .= "' AND password = '" . $password . "'";  
 
 Similar, there's more detailed you could say about the solutions, including attempted but incorrect solutions.
 
