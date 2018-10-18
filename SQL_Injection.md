@@ -14,7 +14,8 @@ Users
 |Naveah      |angelW0rd  |221      |
 
 ### SQL Query
-$sql_command = "select * from users where username = '" . $_POST['username']; $sql_command .= "' AND password = '" . $_POST['password'] . "'";
+$sql_command = "select * from users where username = '" . $_POST['username'];   
+$sql_command .= "' AND password = '" . $_POST['password'] . "'";   
 SELECT * FROM users WHERE username='<username>' AND password='<password>'
 
 ### Command that could be used to exploit the attack
