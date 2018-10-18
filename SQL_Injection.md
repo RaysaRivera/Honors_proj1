@@ -14,12 +14,10 @@ Users
 |Naveah      |angelW0rd  |221      |
 
 ### SQL Query
-
 $sql_command = "select * from users where username = '" . $_POST['username']; $sql_command .= "' AND password = '" . $_POST['password'] . "'";
 SELECT * FROM users WHERE username='<username>' AND password='<password>'
 
 ### Command that could be used to exploit the attack
-
 Before entering the password portion, a malicious user could enter a “<userid> OR 1=1; --”
 SELECT * FROM users WHERE username='<username>' OR 1=1; -- ' AND password='<password>'
 
