@@ -6,7 +6,8 @@ Generally, attackers use this attack to gather privileged information from the d
 
 ## Example of an attack in PHP:
 
-Users    
+Users 
+
 |Username    |Password   |User ID  |
 |:----------:|:---------:|:-------:|
 |Auggie      |password101|17       |
