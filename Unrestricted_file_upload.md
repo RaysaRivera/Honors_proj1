@@ -1,6 +1,6 @@
 # Unrestricted Upload of File with Dangerous Type - CWE: 434
 
-This vulnerability occurs when a malicious user uploads/transfers dangerous files that are then automatically processed into the environment. This presents a large risk to the system because there is no predicting what the uploaded file will do.  
+This vulnerability occurs when a malicious user uploads/transfers dangerous files that are processed into the host environment and can be run immediately with the program that it has intercepted. Unrestricted upload of file with dangerous type presents a large risk to the system because the uploaded file could compromise the system’s safety by exploiting local vulnerabilities, inserting a phishing page or a permanent XSS into the website, obtaining sensitive data or by overwriting files/data that other users access (can replace .htaccess file so the attacker can execute specific scripts).With .asp and .php files, these are especially dangerous since web servers often automatically execute those extensions despite the file system permissions that may not specify execution.
 
 ## Example of an attack:
 
