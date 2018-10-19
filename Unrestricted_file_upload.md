@@ -5,37 +5,28 @@ This vulnerability occurs when a malicious user uploads/transfers dangerous file
 ## Example of an attack:
 
 HTML Portion of the code:
-<form action="upload_picture.php" method="post" enctype="multipart/form-data">
-
-Choose a file to upload:
-
-<input type="file" name="filename"/>
-
-<br/>
-
-<input type="submit" name="submit" value="Submit"/>
-
-</form>
-
+```
+<form action="upload_picture.php" method="post" enctype="multipart/form-data">  
+Choose a file to upload:  
+<input type="file" name="filename"/>  
+<br/>  
+<input type="submit" name="submit" value="Submit"/>  
+</form>  
+```
 PHP Portion of the code:
-Comment: // Define the target location where the picture being uploaded is going to be saved.
-
-$target = "pictures/" . basename($_FILES['uploadedfile']['name']);
-
-Comment: // Move the uploaded file to the new location.
-
-if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target)){
-
-echo "The picture has been successfully uploaded.";
-
-}
-
-else {
-
-echo "There was an error uploading the picture, please try again.";
-
-}
-
+Comment: // Define the target location where the picture being uploaded is going to be saved.  
+```
+$target = "pictures/" . basename($_FILES['uploadedfile']['name']);  
+```
+Comment: // Move the uploaded file to the new location.  
+```
+if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target)){  
+    echo "The picture has been successfully uploaded.";  
+}  
+else {  
+echo "There was an error uploading the picture, please try again.";  
+}  
+```
 
 ## How to prevent the attack: 
 
@@ -55,6 +46,7 @@ Run code on lowest privilege needed for the task. Ideally do so on individual ac
 # Code of a proper solution: 
 PHP Portion of code
 
+```
 <?php
     $currentDir = getcwd();
     $uploadDirectory = "/uploads/";
@@ -97,6 +89,7 @@ PHP Portion of code
     }
 
 ?>
+```
 
 # Real World Example of the attack:
 Earlier this year, it was discovered discovered by researcher James Bercegay that “My Cloud” a popular personal cloud storage unit had this vulnerability. By exploiting this vulnerability Bercegay could replace any file on the server and gain control over the device. The code with the vulnerability appears to be left over from an earlier project called D-Link DNS-320L since there are identical vulnerabilities and misspelled function names, but this project had the vulnerabilities corrected in 2014. 
