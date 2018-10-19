@@ -13,7 +13,7 @@ Choose a file to upload:
 <input type="submit" name="submit" value="Submit"/>  
 </form>  
 ```
-PHP Portion of the code:
+PHP Portion of the code:  
 Comment: // Define the target location where the picture being uploaded is going to be saved.  
 ```
 $target = "pictures/" . basename($_FILES['uploadedfile']['name']);  
