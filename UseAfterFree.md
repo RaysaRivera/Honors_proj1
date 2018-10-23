@@ -34,6 +34,6 @@ In the example above from [here](https://sensepost.com/blog/2017/linux-heap-expl
 
 Many cases of the use after free vulnerability are very specific program bugs and will be found rarely. In addition to that difficulty, in order to use such a vulnerability to execute arbitrary code, you must have great control over memory within the heap, which is oftentimes difficult when working with complex programs. 
 
-Most defense comes from strong memory containment by whatever language is being used. Not letting users have access to dangling pointers is the strongest way to prevent any issues. Restricting user access from dynamic pointers, as well as input validation are both ways programmer's can protect their programs as well. 
+Most defense comes from strong memory containment by whatever language is being used. Not letting users have access to dangling pointers is the strongest way to prevent any issues. Restricting user access from dynamic pointers, as well as input sanitation are both ways programmer's can protect their programs as well. 
 
 While no popular attacks have been found to use this vulnerability, browsers are often afflicted from this, leading to possible drive-by viruses from websites or XSS vulnerabilities. They are often found and fixed relatively quickly.
