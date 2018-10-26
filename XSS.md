@@ -10,11 +10,22 @@ Stored XSS(aka persistent XSS): This version of cross-site scripting is when an 
 DOM-Based XSS
 
 
-## Example of an attack in :
+## Example of an attack :
 
 
 ## How to prevent the attack: 
 Input should be validated always and as strictly as possible. In other words, never insert unvalidated input directly into scripts, CSS, tag names, attribute names, HTML comments, HTML pages or inside javascript events. Furthermore, any character that can misinterpreted as HTML should be revised so that < is replaced with &lt; and “ with &quot; and so on and so forth. 
+
+|Character   |Replacement|
+|:----------:|:---------:|
+|<           |& lt;       |
+|>           |& gt;       |
+|"           |& quot;     |
+|'           |& #x27;     |
+|&           |& amp;      |
+|/           |& #x2F;     |
+
+Be sure to remove the space between & and the rest of the replacement so that it works properly.
 
 Any software that uses HTML is at risk for cross-site scripting attacks
 
@@ -22,4 +33,8 @@ Any software that uses HTML is at risk for cross-site scripting attacks
  
 
 ## Real World Example of the attack:
-This type of attack is extremely common due to the large availability of web pages, sites and interfaces that interact with them. In August of 2018, there was a XSS vulnerability publicly discovered on Cisco Unified Communications Manager. The issue stems from “insufficient validation of user-supplied input by the web-based management interface of the affected software” and the report stated that there are no workarounds to address said vulnerability. 
+This type of attack is extremely common due to the large availability of web pages, sites and interfaces that interact with them. 
+
+The most notable example of Cross-site scripting was “the Samy worm” in 2005. The worm used XSS hidden within JavaScript code to infect and propagate. In less than 24 hours, the worm had spread over one million MySpace profiles, which was the most popular social networking platform at the time. The problem became so widespread that Myspace had to shutdown to prevent further infection. 
+
+In August of 2018, there was a XSS vulnerability publicly discovered on Cisco Unified Communications Manager. The issue stems from “insufficient validation of user-supplied input by the web-based management interface of the affected software” and the report stated that there are no workarounds to address said vulnerability. 
