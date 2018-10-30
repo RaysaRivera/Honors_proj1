@@ -7,7 +7,7 @@ Reflected XSS (aka non-persistent XSS): This version of cross-site scripting is 
 
 Stored XSS(aka persistent XSS): This version of cross-site scripting is when an application reads input data from an HTTP request and then stores it into a database, logs, or other component of the web page. The malicious code can be executed once the user visits a vulnerable page. 
 
-DOM-Based XSS
+DOM-Based XSS: In contrast to the other forms of XSS, DOM-Based XSS is an error within the DOM model in the browser of the user. In this situation, the client script performs the injection of XSS into the web page (rather than the server injecting it) and it is injected during runtime in the client directly so that the client side code runs unexpectedly despite the HTTP response remaining the same. According to Netsparker.com, up to 50% of websites are vulnerable to this threat and have found examples of such on sites as large as Yahoo, Alexa and Google.
 
 
 ## Example of an attack :
@@ -26,6 +26,10 @@ Input should be validated always and as strictly as possible. In other words, ne
 |/           |& #x2F;     |
 
 Be sure to remove the space between & and the rest of the replacement so that it works properly.
+
+For DOM based XSS attacks, adding server side filters won't stop the attack since it is run on the client side. Specifically, things written after the "#"(hash) isn't sent to the server. Similarly, web application firewalls and regular framework protections also won't protect against DOM based XSS attacks. 
+
+To best prevent DOM based XSS attacks, never use user-controlled input directly into the surce code. Also, when using user input inside <div> elements, use innerText/textContent rather then innerHTML since innerHTML inserts HTML into the code directly whereas innnerText/textContent doesn't allow the insertion of HTML tags.
 
 Any software that uses HTML is at risk for cross-site scripting attacks
 
