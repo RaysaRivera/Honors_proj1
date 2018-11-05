@@ -19,6 +19,10 @@ When compiling and running the above code, it will ask for user input for a stri
 
 The most basic defense is to use safe input methods with defined size limits. Preventing user input from moving beyond the acceptable size of the container, either by input denial or cutting off the end of the input. In addition, dynamic memory containers and address space layout randomization will decrease the likelihood of an effective attack. Address space layout randomization is an OS behavior that will change the container address to be random within a large section of memory. This prevents an attacker from knowing what the memory layout is, hindering the possibility of code injection and memory reconnaissance.  
 
+Compile-time defenses do exist against buffer overflow, though they are extremely difficult to implement as the amount of dynamic memory needed is not known until run-time. The best impelementations use libraries and extensions, as well as multiple comiles, though this can cause issues with 3rd-party applications, as well as unexpected side-effects. Checking stack memory for corruption after every allocation can prevent attacks as well.
+
+Run-time defenses use virtual memory to ensure memory space is not executable, preventing some attackes, though if this is known, an attacker can work around it to get back to physical space to execute. "Guard pages" can also be created between sections of memory, which can set off alarms if data is overwritten and prevent more important memory from being affected. 
+
 Most modern languages have input functions that either check for data size to prevent a buffer overflow, or allow for an extra argument to describe max length of input. Input from the user is abstracted from the programmer in languages like Java, so be sure to use the safe versions of those functions. For C, the safest way of getting user input is the function
 
 ```C
