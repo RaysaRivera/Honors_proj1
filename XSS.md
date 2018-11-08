@@ -12,7 +12,34 @@ DOM-Based XSS: In contrast to the other forms of XSS, DOM-Based XSS is an error 
 
 ## Example of an attack :
 
-DOM-Based example (based on the one from Netsparker):
+Reflected XSS attack (example from OWASP):
+
+```
+<% String sid = request.getParameter(sid"); %> 
+---
+	Student ID: <%= sid %>
+```
+
+The example code is a JSP code segment and it’s supposed to read in an student ID, sid, from an HTTP request and then displays the input out to the user. Since the code is only expecting alphanumeric characters, the code runs the input to display the HTTP response. The problem is that a user can enter a link that can cause malicious code to run on their computer. Generally, the user doesn’t mean to run dangerous code on their computer. This attack is most commonly done when the user has clicked on an attacker’s malicious URL and from there, the victim accidently reflects the malicious code on to their own computer. 
+
+Stored XSS attack (example from OWASP):
+```
+<%... 
+	 Statement stmt = conn.createStatement();
+	 ResultSet rs = stmt.executeQuery("select * from stu where id="+sid);
+	 if (rs != null) {
+	  rs.next(); 
+	  String name = rs.getString("name");
+	%>
+	
+	Student Name: <%= name %>
+```
+The JSP code is intended to query a database for an student with the given id.
+
+This type of code is vulnerable since it looks to be a database created from user input. If the data comes from the user and isn’t properly santized or validated then the attack can use those fields to store malicious commands that will execute in the user’s browser. This is unfortunate because it only takes one attacker to jeopardize the information and the systems of every user that has access to the database. Furthermore, attackers aim to attack users who have elevated privileges so that when the victim runs the code, the attacker can gain access to sensitive data or perform attacks that use more privileged operations. 
+
+
+DOM-Based example (based from Netsparker):
 Hypothetical code from a website called http://www.XSSvuln.com/DOMex.html contains the following:
 ```
 <script>
@@ -28,7 +55,8 @@ The result of the request is that since the page is writing the typed URL into t
 
 
 ## How to prevent the attack: 
-Input should be validated always and as strictly as possible. In other words, never insert unvalidated input directly into scripts, CSS, tag names, attribute names, HTML comments, HTML pages or inside javascript events. Furthermore, any character that can misinterpreted as HTML should be revised so that < is replaced with &lt; and “ with &quot; and so on and so forth. 
+
+Generally, input should be validated always and as strictly as possible. In other words, never insert unvalidated input directly into scripts, CSS, tag names, attribute names, HTML comments, HTML pages or inside javascript events. Furthermore, any character that can misinterpreted as HTML should be revised so that < is replaced with &lt; and “ with &quot; and so on and so forth. 
 
 |Character   |Replacement|
 |:----------:|:---------:|
@@ -38,6 +66,12 @@ Input should be validated always and as strictly as possible. In other words, ne
 |'           |`&#x27;`     |
 |&           |`&amp;`      |
 |/           |`&#x2F;`     |
+
+From a 2006 Whitehat Security paper, there is specific prevention methods for the user and the developer involved in the attack.
+
+Users should always be weary of clicking on links sent to them through online messagers/emails especially when the links are extremely long or look like they contain code. Users should also be careful and avoid questionable websites because those are the ones that are generally vulnerable to web browser exploitations. When on questionable sites, disabling scripts such as JavaScript, Java, and Active X can help. Furthermore, some browsers offer add-ons that can help prevent XSS attacks. 
+
+Web Application Developers should be prioritizing input validation on all user-submitted content. Input should only be accepted if it’s the expected length with the expected characters and a proper format for the data otherwise, the input should be blocked. Additionally, another layer of security is the prevention of bots sending input and so the developer can implement session tokens, CAPTCHA systems and the like. If allowing user-supplied HTML, which isn’t recommended at all, then the HTML content must be well formed, contain no references to remote content like Style sheets or javascript and has only safe tags.  
 
 For DOM based XSS attacks, adding server side filters won't stop the attack since it is run on the client side. Specifically, things written after the "#"(hash) isn't sent to the server. Similarly, web application firewalls and regular framework protections also won't protect against DOM based XSS attacks. 
 
@@ -56,7 +90,6 @@ document.getElementById("contentholder").textContent = document.baseURI;
 ## Real World Example of the attack:
 This type of attack is extremely common due to the large availability of web pages, sites and interfaces that interact with them. 
 Any software that uses HTML is at risk for cross-site scripting attacks and users are completely reliant on the security procedures of the websites they visit to ensure their online safety against this attack. 
-
 
 The most notable example of Cross-site scripting was “the Samy worm” in 2005. The worm used XSS hidden within JavaScript code to infect and propagate. In less than 24 hours, the worm had spread over one million MySpace profiles, which was the most popular social networking platform at the time. The problem became so widespread that Myspace had to shutdown to prevent further infection. According to Anand, the director of security at Myspace shortly after the incident, the company was ill prepared for the Samy worm and barely had a security team. Anand goes on to state that it was a "watershed moment for the industry”. Jeremiah Grossman, a web security expert and founder of the firm WhiteHat Security, goes further and has said that security professionals knew about the vulnerability but didn’t take it seriously since there was no idea of how bad an attack and infection could become and that it “changed the industry forever."
 
