@@ -2,7 +2,7 @@
 
 For meltdown, this vulnerability is a hardware based one. It stems from the use of out-of-order execution in the kernel (code that takes instructions from the OS to the CPU) to improve performance. Meltdown is able to look at the memory of the operating system’s kernel and read private data regardless of if it has the privilege to access that information. In other words, meltdown works by “melting” the barrier between user applications and the OS leaving the memory susceptible to having its secrets (from memory, programs and the OS) found out.
 
-> As stated in "Meltdown: Reading Kernel Memory from User Space", Meltdown consists of 3 steps: 
+As stated in "Meltdown: Reading Kernel Memory from User Space", Meltdown consists of 3 steps: 
 
 > Step 1:  The content of an attacker-chosen memory location, which is inaccessible to the attacker, is loaded into a register. 
 
@@ -67,3 +67,9 @@ To find the specific code patch check: https://github.com/IAIK/KAISER
 
 ## Real World Example of the attack:
 There haven’t been any documented attacks of this vulnerability in the wild. These vulnerabilities were found by multiple groups of researchers. 
+
+Consequences of the attacks' discovery:
+
+Due to the exploits of out-of-order execution, Meltdown has changed the perspective of hardware optimizations and how they can change microarchitectural elements regardless of the proper privileges. Hardware needs to be redesigned to avoid Meltdown and Spectre attacks. Meltdown has also shown that no software is safe from side channel attacks if the hardware it’s running on isn’t secure. KAISER has been an improvement but it still requires certain address spaces to be mapped and with these attacks in mind, an even stronger isolation between user and kernel space may be required. Also, Meltdown is very dangerous for cloud providers with guests that aren’t fully virtualized which is done for performance reasons. This is because the kernel is shared among the guests and the isolation between them and everyone’s data is susceptible to Meltdown and all the data from the same host can be exposed. Either changing the infrastructure to full virtualization or the addition of KAISER will both increase costs to the provider.  
+
+On October 8, 2018, Intel supposedly added hardware and firmware mitigations regarding Spectre and Meltdown vulnerabilities to its latest processors.
