@@ -2,7 +2,46 @@
 
 For meltdown, this vulnerability is a hardware based one. It stems from the use of out-of-order execution in the kernel (code that takes instructions from the OS to the CPU) to improve performance. Meltdown is able to look at the memory of the operating system’s kernel and read private data regardless of if it has the privilege to access that information. In other words, meltdown works by “melting” the barrier between user applications and the OS leaving the memory susceptible to having its secrets (from memory, programs and the OS) found out.
 
+> As stated in "Meltdown: Reading Kernel Memory from User Space", Meltdown consists of 3 steps: 
+
+> Step 1:  The content of an attacker-chosen memory location, which is inaccessible to the attacker, is loaded into a register. 
+
+> Step 2:  A transient instruction [an instruction that is executed out of order and leaving measurable side effect] accesses a cache line based on the secret content of the register. 
+
+> Step 3:  The attacker uses Flush+Reload [a technique where an attacker can dump the entire kernel memory by reading privileged memory in an out-of-order execution stream, and then transmit the data through a microarchitectural covert channel] to determine the accessed cache line and hence the secret stored at the chosen memory location
+
+
 ## Example of an attack:
+
+An example of the Meltdown step of transient instructions from "Meltdown: Reading Kernel Memory from User Space":
+
+```
+1 ; rcx = kernel address, rbx = probe array 
+
+2 xor rax, rax 
+
+3 retry: 
+
+4 mov al, byte [rcx] 
+
+5 shl rax, 0xc 
+
+6 jz retry 
+
+7 mov rbx, qword [rbx + rax] 
+
+```
+Line 4 of the example is the beginning of the Meltdown exploit and it loads the byte value of the target kernel address from RCX into the least significant byte of RAX (AL). As this line is loaded, the CPU has likely already started executing line 5 through 7 as part of its out of order execution. 
+
+Line 5 multiplies the secret value by the page size so that accesses to the array have some distance from one another so that the prefetcher don’t load adjacent memory locations into the cache. 
+
+Line 6 ensure that the secret value is accurate since the side channel has a bias towards 0 and it’s looking to obtain the proper secret value. If it’s a zero, it will retry the prior instructions.  
+
+Line 7 takes the multiplied secret value and adds the base address of the probe array so that it creates the target address of the covert channel. This target address is read to cache the appropriate cache line so that the address will be loaded into L1 data cache. 
+
+After the transient instruction sequence has run, one cache line of the probe array is caches. By checking the position of the cached cache line in the probe array, the secret value can be discovered. The attacker needs to iterate over all the pages of the probe array and then check the access time for all offsets (first cache lines) to the page. The number of the page that contains the cached cache line has a direct relationship to the secret value.
+
+By iterating through all possible addresses, Meltdown can retrieve entire memory dumps. This is more easily done when the attack is used in conjunction with a malicious insert of a exception handler or suppressor so that the Meltdown attack can run for a continuous amount of time without having to worry about the privilege check failing and interrupting the access of privileged data. 
 
 ## How to prevent the attack: 
 According to the official meltdown attack website, it’s impossible to detect traces of the Meltdown/Spectre attack in traditional log file. Antivirus can potentially detect the attack but it’s unlikely since it’d be difficult to distinguish the attack from other types of regular applications. In order for an antivirus to detect the attack, it’d need to compare binaries after their values are known.
