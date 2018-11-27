@@ -43,3 +43,28 @@ In 2014, a vulnerability in the popular cryptography library OpenSSL was discove
 
 Following the discovery of the bug and the amount of systems at risk, a patch was released in April of 2014, though large amounts of sites are still vulnerable to a Heartbleed attack due to improper patching of systems.
 
+To prevent a heartbleed vulnerability, OpenSSL must be updated to the latest patch, which updates to the correct implementation of the heartbeat feature, including bounds checking to prevent a buffer overread. The new code in OpenSSL is below:
+
+```C
+* Read type and payload length first */
+
+if (1 + 2 + 16 > s->s3->relent)
+
+return 0;
+
+/* silently discard */
+
+hbtype = *p++;
+
+n2s(p, payload);
+
+if (1 + 2 + payload + 16 > s->s3->rrec.length)
+
+return 0;
+
+/* silently discard per RFC 6520 sec. 4 */
+
+pl = p;
+```
+
+The second if statement checks the bounds of the heartbeat to ensure the proper data is being sent. 
