@@ -84,11 +84,26 @@ KAISER protects from attacks that exploit that the kernel address space is mappe
 
 To find the specific code patch check: https://github.com/IAIK/KAISER
 
+There isn’t a proper code solution to Spectre since it’s a hardware based vulnerability. However, according to “Spectre Attacks: Exploiting Speculative Execution”, there are a variety of ways to mitigate the attacks. The first is to prevent speculative execution but doing so would cause significant performance slowdown. Software could be altered to use serializing or speculation blocking instructions and that ensures that instructions aren’t speculatively executed. Another variant of Spectre is based on indirect branch poisoning and inserting serializing instructions can against it as well. Another way to mitigate against Spectre attacks is to prevent access to secret data. This can be done by executing processes separately and the other way is to protect access to pointers by xoring them with a pseudo-random poison value. If it were possible to prevent data from entering covert channels, that would also be helpful, but that isn’t currently available in processors. Another mitigation against Spectre is to prevent branch poisoning. Google researchers have suggested the use of reptolines to protect against Spectre attacks. In their words:
+>“Retpoline” sequences are a software construct which allow indirect branches to be isolated from speculative execution.  This may be applied to protect sensitive binaries (such as operating system or hypervisor implementations) from branch target injection attacks against their indirect branches.  
+The name “retpoline” is a portmanteau of “return” and “trampoline.”  It is a trampoline construct constructed using return operations which also figuratively ensures that any associated speculative execution will “bounce” endlessly.
+
+In other words and as stated as a response to the discovery of NetSpectre, Intel released the following in a statement: 
+>NetSpectre is an application of Bounds Check Bypass (CVE-2017-5753), and is mitigated in the same manner – through code inspection and modification of software to ensure a speculation stopping barrier is in place where appropriate. 
+
+
 ## Real World Example of the attack:
 There haven’t been any documented attacks of this vulnerability in the wild. These vulnerabilities were found by multiple groups of researchers. 
 
 Consequences of the attacks' discovery:
 
 Due to the exploits of out-of-order execution, Meltdown has changed the perspective of hardware optimizations and how they can change microarchitectural elements regardless of the proper privileges. Hardware needs to be redesigned to avoid Meltdown and Spectre attacks. Meltdown has also shown that no software is safe from side channel attacks if the hardware it’s running on isn’t secure. KAISER has been an improvement but it still requires certain address spaces to be mapped and with these attacks in mind, an even stronger isolation between user and kernel space may be required. Also, Meltdown is very dangerous for cloud providers with guests that aren’t fully virtualized which is done for performance reasons. This is because the kernel is shared among the guests and the isolation between them and everyone’s data is susceptible to Meltdown and all the data from the same host can be exposed. Either changing the infrastructure to full virtualization or the addition of KAISER will both increase costs to the provider.  
+
+Since Spectre uses a different attack strategy than Meltdown, Spectre requires different defensive mechanisms and isn’t easily fixed. The combination of these vulnerabilities have led to a new branch of research in vulnerability defenses especially since now it’s a large question of compromising performance on the architectural level for better system security. 
+
+Since the initial discovery of Meltdown and Spectre, even more variations of Spectre have been found and it’s expected that the number will increase as more people investigate and research. For example, NetSpectre is a variant that can remotely read a victim system’s memory without running any code on said system. 
+
+Even web browsers have committed to protecting against Spectre Attacks, Google software engineer Charlie Reis stated that “Site Isolation does cause Chrome to create more renderer processes, which comes with performance tradeoffs” and  “there is about a 10-13 percent total memory overhead in real workloads due to the larger number of processes.” 
+In mid October of 2018, MIT researchers suggested a approach to preventing Spectre attacks which is called DAWG (Dynamically Allocated Way Guard) and suggests better security without needing to compromise performance.
 
 On October 8, 2018, Intel supposedly added hardware and firmware mitigations regarding Spectre and Meltdown vulnerabilities to its latest processors.
