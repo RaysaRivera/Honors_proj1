@@ -10,6 +10,13 @@ As stated in "Meltdown: Reading Kernel Memory from User Space", Meltdown consist
 
 > Step 3:  The attacker uses Flush+Reload [a technique where an attacker can dump the entire kernel memory by reading privileged memory in an out-of-order execution stream, and then transmit the data through a microarchitectural covert channel] to determine the accessed cache line and hence the secret stored at the chosen memory location
 
+Spectre attacks are hardware-based vulnerabilities that stem from the use of speculative execution as well as branch prediction from microprocessors. Speculative execution is when the processor reaches a conditional branch instruction and makes a prediction as to what the conditional will return so that the program path can continue executing without slowing down performance. If the guess is right, the program has a fast performance, but if the guess is wrong, the processor returns to the last correct step and moves from there. Branch prediction is part of speculative execution and it's the portion that guesses which branch is the likelier one. As a result of malicious code, Spectre attacks can have a victim speculatively perform operations that shouldn’t occur so that it leaks the confidential information through side channels. Due to the nature of the Spectre attack, the name was given since its root cause is speculative execution and “will haunt us for quite some time.”
+ 
+Summarized from Spectre Attacks: Exploiting Speculative Execution
+Set-up Phase: the attacker performs malicious operations to mistrain the processor to make mistakes in the speculative execution and to induce it. The attacker can also prepare the covert channel to later extract the victim’s information. 
+Second Phase: the processor performs speculative execution in such a way that then transfers confidential information from the victim into a microarchitectural covert channel. Other times, the attacker can use speculative (mis-)execution [through the use of mistraining the processor] of the malicious code to get the confidential information. 
+Final Phase: the sensitive data is recovered through the covert channel usually using Flush+Reload or Evict+Reload
+
 
 ## Example of an attack:
 
@@ -47,6 +54,8 @@ By iterating through all possible addresses, Meltdown can retrieve entire memory
 According to the official meltdown attack website, it’s impossible to detect traces of the Meltdown/Spectre attack in traditional log file. Antivirus can potentially detect the attack but it’s unlikely since it’d be difficult to distinguish the attack from other types of regular applications. In order for an antivirus to detect the attack, it’d need to compare binaries after their values are known.
 
 The Meltdown vulnerability primarily affects Intel microprocessors due to how aggressive their speculative execution and out-of-order execution is (which is done to increase performance). However, some ARM microprocessors are also affected. The reason most ARM processors aren’t affected by Meltdown though is because ARM uses two registers to store physical addresses of translation tables. One maps the user address space while the other maps the kernel address space. When trying to perform privilege checks for accessing memory, the actual translation tables need to be checked. 
+
+The Spectre vulnerability affects close to all systems like Desktops, Laptops, Cloud Servers, Smartphones, etc. All modern processors capable of keeping many instructions in flight are potentially vulnerable (Intel, AMD, and ARM processors have been confirmed to have this vulnerability).
 
 ## Code of a proper solution: 
 Since the issue is a hardware based one, the most effective solution would be to correct the vulnerability in the architecture. For example, there is Stronger Kernel Isolation which calls for unmapping “kernel pages while the user process is in user space and switch to a separated kernel address space when entering the kernel”. This is so that user pages aren’t mapped in kernel space but in order to implement that, large portions of modern-day kernel’s would be to rewritten. 
