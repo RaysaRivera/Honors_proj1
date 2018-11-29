@@ -50,6 +50,16 @@ After the transient instruction sequence has run, one cache line of the probe ar
 
 By iterating through all possible addresses, Meltdown can retrieve entire memory dumps. This is more easily done when the attack is used in conjunction with a malicious insert of a exception handler or suppressor so that the Meltdown attack can run for a continuous amount of time without having to worry about the privilege check failing and interrupting the access of privileged data. 
 
+A classic example of the Spectre attack is:
+
+```
+if (x < array1_size) 
+y = array2[array1[x] * 256]; 
+```
+where x is attacker-controlled data
+
+The purpose of the if statement is to verify the value of x is within a legal range. The attack starts by mistraining the branch predictor by continually invoking the code with valid inputs so that the branch predictor starts to expect the if statement will be true. During the next phase, the attacks invokes the code with a value that is out of bounds for array1. Since the branch predictor has been mistrained, the CPU guesses the bound check will be assumed to be true and executes the following instructions: y = array2[array1[x]*4096]. Due to that instruction executing, the cache states have been changed. Even when the CPU properly checks the bounds of the if statement and determines that the condition fails, the cache remains the same. As a result, the attacker can analyze the cache to find the value of the secret byte that was read from out-of-bounds memory. 
+
 ## How to prevent the attack: 
 According to the official meltdown attack website, it’s impossible to detect traces of the Meltdown/Spectre attack in traditional log file. Antivirus can potentially detect the attack but it’s unlikely since it’d be difficult to distinguish the attack from other types of regular applications. In order for an antivirus to detect the attack, it’d need to compare binaries after their values are known.
 
