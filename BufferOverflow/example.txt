@@ -1,1 +1,0 @@
-When compiling and running code "example.c", it will ask for user input for a string to store in an 8-character buffer. Since the way it recieves the string is unbounded, if you enter a string of longer than 8 characters, the program will seg fault. 

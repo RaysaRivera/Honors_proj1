@@ -1,7 +1,0 @@
-The Code Red worm (named for the flavor of Mountain Dew drank at the time of discovery) was a virus released in July of 2001 and observed just a week later, after reaching 359,000 hosts. The worm spread using a buffer overflow vulnerability in Microsoft's IIS web server application. By inputting a long string of the character 'N', executable code was injected into the operating system to infect the host with the worm. After being infected, the host was used to DDoS on certain IP's, including the White House's servers.
-
-https://en.wikipedia.org/wiki/Code_Red_(computer_worm)
-
-A demonstration of the worm can be seen here:
-
-https://www.youtube.com/watch?v=iu48QBJP_p0

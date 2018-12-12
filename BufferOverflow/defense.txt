@@ -1,3 +1,0 @@
-The most basic defense is to use safe input methods with defined size limits. Preventing user input from moving beyond the acceptable size of the container, either by input denial or cutting off the end of the input. In addition, dynamic memory containers and address space layout randomization will decrease the likelihood of an effective attack. 
-
-Most modern languages have input functions that either check for data size to prevent a buffer overflow, or allow for an extra argument to describe max length of input. Otherwise, it is the programmer's responsibility to know of this vulnerability and ensure they check input to prevent an attack.
