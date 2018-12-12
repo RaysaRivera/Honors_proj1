@@ -2,9 +2,21 @@
 
 A man in the middle attack (MITM) is when an attacker puts themself inside of a conversation between users/applications without being detected. Generally, attackers use MITM attacks to gain secure information or to impersonate one of the parties. 
  
-## Example of an attack:
-
 There are many forms of man-in-the-middle attacks. IP spoofing is one of them and it’s where an attacker fakes its IP address so that the victim unknowingly interacts with the attacker. Domain Name Server (DNS) spoofing is when a user unknowingly visits the fake website and the attacker can then take traffic from the original site or access the login credentials of the victim. HTTPS spoofing is when an attacker tricks the victim’s browser into thinking the site is secure (as normally noted by HTTPS in the URL), but the attacker redirects the traffic to an unsecure website so that the attacker can monitor the interactions and steal any valuable and available information. A similar attack is when the victim connects to an unsecure server (HTTP), the server tries to redirect to HTTPS but the attacker uses another computer and secure server so intercept between the victim’s computer and the initial server by taking control of Secure Sockets Layer (SSL) to get the victim’s information. 
+
+## Example of an attack with Public Key Protocol:
+
+Suppose Alice (A) wishes to communicate with Bob (B), but there is a hidden malicious user Matthew (M) trying to eavesdrop.  
+
+If Alice sends Bob K_PA (Alice’s public key), Matt could intercept it and send Alice a falsified message that looks like it’s from Bob, but it contains Matt’s public key (K_PM). 
+
+Alice would encrypt her message(s) with K_PM (since she thinks that the key belongs to Bob) and send the message to Bob. 
+
+Matt can now intercept the messages and decrypt them using K_SM (M’s private/secret key). Matt can also alter Alice’s original message when sending it to Bob . 
+
+Matt will encrypt the message to Bob with Bob’s public key (K_PB) that Matt initially intercepted when Bob was trying to send it to Alice. 
+
+When Bob receives the encrypted message, he will think it’s from Alice. 
  
 ## How to prevent the attack: 
 
@@ -13,6 +25,8 @@ In order to prevent MITM attacks, there needs to be secure authentication, encry
 ## Code of a proper solution: 
  
 There is no definite solution, there are only prevention techniques.
+
+When using public key protocol, you can help prevent MITM by requiring identities to be checked. With TLS (Transport Layer Security), users are authenticated through a trusted third party (a certificate authority) that verifies that the Bob received Alice’s actual public key rather than an imposter’s like Matt. Likewise, Alice can check her communications with Bob since the public key will be digitally signed by the certificate authority.
 
 ## Real World Example of the attack:
 
