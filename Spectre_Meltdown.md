@@ -46,7 +46,7 @@ Line 6 ensure that the secret value is accurate since the side channel has a bia
 
 Line 7 takes the multiplied secret value and adds the base address of the probe array so that it creates the target address of the covert channel. This target address is read to cache the appropriate cache line so that the address will be loaded into L1 data cache. 
 
-After the transient instruction sequence has run, one cache line of the probe array is caches. By checking the position of the cached cache line in the probe array, the secret value can be discovered. The attacker needs to iterate over all the pages of the probe array and then check the access time for all offsets (first cache lines) to the page. The number of the page that contains the cached cache line has a direct relationship to the secret value.
+After the transient instruction sequence has run, one cache line of the probe array is cached. By checking the position of the cached cache line in the probe array, the secret value can be discovered. The attacker needs to iterate over all the pages of the probe array and then check the access time for all offsets (first cache lines) to the page. The number of the page that contains the cached cache line has a direct relationship to the secret value.
 
 By iterating through all possible addresses, Meltdown can retrieve entire memory dumps. This is more easily done when the attack is used in conjunction with a malicious insert of a exception handler or suppressor so that the Meltdown attack can run for a continuous amount of time without having to worry about the privilege check failing and interrupting the access of privileged data. 
 
