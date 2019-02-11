@@ -1,0 +1,4 @@
+SQL Injection - CWE: 89
+A SQL Injection attack is when an attacker alters SQL commands that use an input that is directly included as part of the query by having a command terminate early and/or adding their own command into the pre-existing query. The largest problem with SQL Injection attacks is that a SQL query is a rich tree structure, but is being treated as a string.
+
+Generally, attackers use this attack to gather privileged information from the database, to modify data, or to execute their own operating system commands.
