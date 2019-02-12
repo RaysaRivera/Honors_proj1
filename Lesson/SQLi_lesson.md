@@ -1,5 +1,15 @@
 # SQL Injection - CWE: 89
 
+## Basics of SQL
+
+add a description of it & databases and how they work
+include an example of query
+explain key words
+
+## Injection attacks
+
+general definition
+
 A SQL Injection attack is when an attacker alters SQL commands that use an input that is directly included as part of the query by having a command terminate early and/or adding their own command into the pre-existing query. The largest problem with SQL Injection attacks is that a SQL query is a rich tree structure, but is being treated as a string.
 
 Generally, attackers use this attack to gather privileged information from the database, to modify data, or to execute their own operating system commands. 
@@ -52,7 +62,3 @@ $username = mysqli_real_escape_string($con, $_POST['username']);
 $password = mysqli_real_escape_string($con, $_POST['password']);  
 $sql_command = "select * from users where username = '" . $username; $sql_command .= "' AND password = '" . $password . "'";  
 ```
-Similar, there's more detailed you could say about the solutions, including attempted but incorrect solutions.
-
-## Real World Example of the attack:
-In 2009, Albert Gonzalez with some co-conspirators hacked into the payment systems of multiple retailers using SQL injection attacks to access their databases to steal information. 7-eleven said the attack affected cash machines inside their stores and it lasted 12 days in 2007. US prosecutors charged Gonzalez with stealing data from 130 million credit and debit cards.
