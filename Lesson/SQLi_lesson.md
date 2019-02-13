@@ -5,7 +5,18 @@
 SQL stands for Structured Query Language and SQL is used with databases. Database management systems work by allowing users to create, retrieve, and modify data. There are a variety of queries, but the most basic is SELECT <data> FROM <table> WHERE <condition is met>.
 Select queries return the selected data from a specific table when the condition is met.
 
-***Add an example table & ask a question about what info is returned in a given select query***
+
+|Name    | Surname| Username |Password   |User ID  |email           |
+|:----------:|:----------:|:---------:|:---------:|:-------:|:-------------------:|
+|Princess      | Carolyn      |PrCa |password101|17       | Princess_Carolyn@hollywoo.com |
+|Todd      | Chavez      | ToCh |angelW0rd  |221      | Todd_Chavez@hollywoo.com |
+|Sarah      | Lynn      | SaLy |pumpkin314  |1      | Sarah_Lynn@hollywoo.com |
+|Diane      | Nguyen      | DiNg |bo0kworm  |221      | Todd_Chavez@hollywoo.com |
+|Wanda      | Pierce      | WaPi |phoeb3  |221      | Wanda_Pierce@hollywoo.com |
+|Vincent      | Adultman      | ViAd |3kiat  |221      | Vincent_Adultman@hollywoo.com |
+
+
+***ask a question about what info is returned in a given select query***
 
 ## Injection attacks
 
@@ -21,12 +32,15 @@ Generally, attackers use this attack to gather privileged information from the d
 
 Users 
 
-|Username    |Password   |User ID  |
-|:----------:|:---------:|:-------:|
-|Auggie      |password101|17       |
-|Naveah      |angelW0rd  |221      |
+|Name    | Surname| Username |Password   |User ID  |email           |
+|:----------:|:----------:|:---------:|:---------:|:-------:|:-------------------:|
+|Princess      | Carolyn      |PrCa |password101|17       | Princess_Carolyn@hollywoo.com |
+|Todd      | Chavez      | ToCh |angelW0rd  |221      | Todd_Chavez@hollywoo.com |
+|Sarah      | Lynn      | SaLy |pumpkin314  |1      | Sarah_Lynn@hollywoo.com |
+|Diane      | Nguyen      | DiNg |bo0kworm  |221      | Todd_Chavez@hollywoo.com |
+|Wanda      | Pierce      | WaPi |phoeb3  |221      | Wanda_Pierce@hollywoo.com |
+|Vincent      | Adultman      | ViAd |3kiat  |221      | Vincent_Adultman@hollywoo.com |
 
-***Add a larger table of info & use it for this example & the one from above***
 
 ### SQL Query
 ```
@@ -44,19 +58,22 @@ SELECT * FROM users WHERE username='<username>' OR 1=1; -- ' AND password='<pass
 
 The addition of “1 = 1;--” can make it so that the entire SQL query is a tautology and as a consequence, a user can retrieve the all of sensitive information from the database that should have only been visible for those with proper access.
 
-The expected results after entering the proper credentials for Auggie:
+The expected results after entering the proper credentials for ToCh:
 
-|Username    |Password   |User ID  |
-|:----------:|:---------:|:-------:|
-|Auggie      |password101|17       |
-
+|Name    | Surname| Password   |User ID  |email           |
+|:----------:|:----------:|:---------:|:-------:|:-------------------:|
+|Todd      | Chavez      | ToCh |angelW0rd  |221      | Todd_Chavez@hollywoo.com |
 
 The results after the malicious command are:
     
-|Username    |Password   |User ID  |
-|:----------:|:---------:|:-------:|
-|Auggie      |password101|17       |
-|Naveah      |angelW0rd  |221      |
+|Name    | Surname| Username |Password   |User ID  |email           |
+|:----------:|:----------:|:---------:|:---------:|:-------:|:-------------------:|
+|Princess      | Carolyn      |PrCa |password101|17       | Princess_Carolyn@hollywoo.com |
+|Todd      | Chavez      | ToCh |angelW0rd  |221      | Todd_Chavez@hollywoo.com |
+|Sarah      | Lynn      | SaLy |pumpkin314  |1      | Sarah_Lynn@hollywoo.com |
+|Diane      | Nguyen      | DiNg |bo0kworm  |221      | Todd_Chavez@hollywoo.com |
+|Wanda      | Pierce      | WaPi |phoeb3  |221      | Wanda_Pierce@hollywoo.com |
+|Vincent      | Adultman      | ViAd |3kiat  |221      | Vincent_Adultman@hollywoo.com |
 
 ***Add a question of similiar malicious queries and ask which is another malicious query***
 
