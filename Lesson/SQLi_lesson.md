@@ -11,10 +11,10 @@ Select queries return the selected data from a specific table when the condition
 |:----------:|:----------:|:---------:|:---------:|:-------:|:-------------------:|
 |Princess      | Carolyn      |PrCa |password101|17       | Princess_Carolyn@hollywoo.com |
 |Todd      | Chavez      | ToCh |angelW0rd  |221      | Todd_Chavez@hollywoo.com |
-|Sarah      | Lynn      | SaLy |pumpkin314  |1      | Sarah_Lynn@hollywoo.com |
-|Diane      | Nguyen      | DiNg |bo0kworm  |221      | Todd_Chavez@hollywoo.com |
-|Wanda      | Pierce      | WaPi |phoeb3  |221      | Wanda_Pierce@hollywoo.com |
-|Vincent      | Adultman      | ViAd |3kiat  |221      | Vincent_Adultman@hollywoo.com |
+|Sarah      | Lynn      | SaLy |pumpkin314  |712      | Sarah_Lynn@hollywoo.com |
+|Diane      | Nguyen      | DiNg |bo0kworm  |319      | Todd_Chavez@hollywoo.com |
+|Wanda      | Pierce      | WaPi |phoeb3  |81      | Wanda_Pierce@hollywoo.com |
+|Vincent      | Adultman      | ViAd |3kiat  |63      | Vincent_Adultman@hollywoo.com |
 
 
 ***ask a question about what info is returned in a given select query***
@@ -37,10 +37,10 @@ Users
 |:----------:|:----------:|:---------:|:---------:|:-------:|:-------------------:|
 |Princess      | Carolyn      |PrCa |password101|17       | Princess_Carolyn@hollywoo.com |
 |Todd      | Chavez      | ToCh |angelW0rd  |221      | Todd_Chavez@hollywoo.com |
-|Sarah      | Lynn      | SaLy |pumpkin314  |1      | Sarah_Lynn@hollywoo.com |
-|Diane      | Nguyen      | DiNg |bo0kworm  |221      | Todd_Chavez@hollywoo.com |
-|Wanda      | Pierce      | WaPi |phoeb3  |221      | Wanda_Pierce@hollywoo.com |
-|Vincent      | Adultman      | ViAd |3kiat  |221      | Vincent_Adultman@hollywoo.com |
+|Sarah      | Lynn      | SaLy |pumpkin314  |712      | Sarah_Lynn@hollywoo.com |
+|Diane      | Nguyen      | DiNg |bo0kworm  |319      | Todd_Chavez@hollywoo.com |
+|Wanda      | Pierce      | WaPi |phoeb3  |81      | Wanda_Pierce@hollywoo.com |
+|Vincent      | Adultman      | ViAd |3kiat  |63      | Vincent_Adultman@hollywoo.com |
 
 
 ### SQL Query
@@ -71,10 +71,10 @@ The results after the malicious command are:
 |:----------:|:----------:|:---------:|:---------:|:-------:|:-------------------:|
 |Princess      | Carolyn      |PrCa |password101|17       | Princess_Carolyn@hollywoo.com |
 |Todd      | Chavez      | ToCh |angelW0rd  |221      | Todd_Chavez@hollywoo.com |
-|Sarah      | Lynn      | SaLy |pumpkin314  |1      | Sarah_Lynn@hollywoo.com |
-|Diane      | Nguyen      | DiNg |bo0kworm  |221      | Todd_Chavez@hollywoo.com |
-|Wanda      | Pierce      | WaPi |phoeb3  |221      | Wanda_Pierce@hollywoo.com |
-|Vincent      | Adultman      | ViAd |3kiat  |221      | Vincent_Adultman@hollywoo.com |
+|Sarah      | Lynn      | SaLy |pumpkin314  |712      | Sarah_Lynn@hollywoo.com |
+|Diane      | Nguyen      | DiNg |bo0kworm  |319      | Todd_Chavez@hollywoo.com |
+|Wanda      | Pierce      | WaPi |phoeb3  |81      | Wanda_Pierce@hollywoo.com |
+|Vincent      | Adultman      | ViAd |3kiat  |63      | Vincent_Adultman@hollywoo.com |
 
 ***Add a question of similiar malicious queries and ask which is another malicious query***
 
