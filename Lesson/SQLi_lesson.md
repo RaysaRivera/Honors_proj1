@@ -2,7 +2,8 @@
 
 ## Basics of SQL
 
-SQL stands for Structured Query Language and SQL is used with databases. Database management systems work by allowing users to create, retrieve, and modify data. There are a variety of queries, but the most basic is SELECT <data> FROM <table> WHERE <condition is met>.
+SQL stands for Structured Query Language and SQL is used with databases. Database management systems work by allowing users to create, retrieve, and modify data. There are a variety of queries, but the most basic is SELECT < data > FROM < table > WHERE < condition is met >.
+
 Select queries return the selected data from a specific table when the condition is met.
 
 
