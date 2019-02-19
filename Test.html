@@ -20,13 +20,13 @@
       document.getElementById("clickCount").innerHTML = clicks;
       document.getElementById("dos").innerHTML = dos;
       if (clicks > 10) {
-        clicks.style.display == "block"
-        dos.style.display == "none"
+        document.getElementById("clickCount").style.display == "none"
+        document.getElementById("dos").style.display == "block"
       }
     };
     </script>
     <button type="button" onClick="onClick()">Click me</button>
     <p>Clicks: <a id="clickCount">0</a></p>
-  <p id="dos" style="block">Congrats! You DDoS'd us!</p>
+  <p id="dos" style="none">Congrats! You DDoS'd us!</p>
 
 </body></html>
