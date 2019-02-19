@@ -13,15 +13,20 @@
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.js">
+    var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        document.getElementById("onClick").innerHTML = clicks;
+    };
+  </script>
   Display this text.<br>
   
-  <b>Display this text as BOLD.</b><br>
+  <b>Display this text as BOLD.</b><br><br>
   
   <form action="/action_page.php">
-    First name: <input type="text" name="fname"><br>
-    Last name: <input type="text" name="lname"><br>
-    <input type="submit" value="Submit">
+    <button type="button" onClick="onClick()">Click me</button>
+    <p>Clicks: <a id="clicks">0</a></p>
   </form>
 </body>
 </html>
