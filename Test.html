@@ -14,7 +14,7 @@
 
 <body>
   <div id="showCount"></div>
-  <input type="button" id="btnClick" value="Click me" onclick="CountFun()">
+  <input type="button" id="btnClick" value="Click me" onclick="CountFun()"><br><br>
   <div id="test">Test</div>                                                       
 
   <script type="text/javascript">
@@ -25,7 +25,7 @@
       var divData=document.getElementById("showCount");
       divData.innerHTML="Number of Downloads: ("+cnt +")";//this part has been edited
       if (cnt > 9)
-        document.getElementById("test").style.display = "inline";
+        document.getElementById("test").style.display = "block";
     }
   </script>
 </body></html>
