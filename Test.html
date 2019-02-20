@@ -24,6 +24,8 @@
       cnt=parseInt(cnt)+parseInt(1);
       var divData=document.getElementById("showCount");
       divData.innerHTML="Number of Downloads: ("+cnt +")";//this part has been edited
+      if (cnt > 9)
+        document.getElementById("test").style.display = "inline";
     }
   </script>
 </body></html>
