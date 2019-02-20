@@ -13,6 +13,10 @@
 </head>
 
 <body>
+  <div id="showCount"></div>
+  <input type="button" id="btnClick" value="Click me" onclick="CountFun()">
+  <div id="test">Test</div>                                                       
+
   <script type="text/javascript">
     document.getElementById("test").style.display = "none";
     var cnt=0;
@@ -22,8 +26,4 @@
       divData.innerHTML="Number of Downloads: ("+cnt +")";//this part has been edited
     }
   </script>
-  <div id="showCount"></div>
-  <input type="button" id="btnClick" value="Click me" onclick="CountFun()">
-  <div id="test">Test</div>                                                       
-
 </body></html>
