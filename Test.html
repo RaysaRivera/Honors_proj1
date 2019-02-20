@@ -17,15 +17,13 @@
     var clicks = 0;
     function onClick() {
       clicks += 1;
-      document.getElementById("clickCount").innerHTML = clicks;
-      document.getElementById("dos").innerHTML = dos;
       if (clicks > 10) {
-        document.getElementById("clickCount").style.display == "none"
+        document.getElementById("onClick").style.display == "none"
         document.getElementById("dos").style.display == "block"
       }
     };
     </script>
-    <button type="button" onClick="onClick()">Click me</button>
+    <button id="onClick" type="button" onClick="onClick()">Click me</button>
     <p>Clicks: <a id="clickCount">0</a></p>
   <div id="dos" style="block">Congrats! You DDoS'd us!</div>
 
