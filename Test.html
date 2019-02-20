@@ -13,21 +13,15 @@
 </head>
 
 <body>
-    <script type="text/javascript">
-    var my_disply = document.getElementById('dos').style.display;
-    var clicks = 0;
-    function onClick() {
-      clicks += 1;
-      if (clicks > 10) {
-        if(my_disply == "block")
-              document.getElementById('dos').style.display = "none";
-        else
-              document.getElementById('dos').style.display = "block";
-      }
-    };
-    </script>
-    <button type="button" onClick="clickCount++">Click me</button>
-    <p>Clicks: <a id="clickCount">0</a></p>
-  <p><a id="dos">Congrats! You DDoS'd us!</a></p>
+  <script type="text/javascript">
+    var cnt=0;
+    function CountFun(){
+     cnt=parseInt(cnt)+parseInt(1);
+     var divData=document.getElementById("showCount");
+     divData.innerHTML="Number of Downloads: ("+cnt +")";//this part has been edited
+    }
+  </script>
+  <div id="showCount"></div>
+  <input type="button" id="btnClick" value="Click me" onclick="CountFun();/>
 
 </body></html>
