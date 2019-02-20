@@ -14,6 +14,7 @@
 
 <body>
   <script type="text/javascript">
+    document.getElementById("test").style.display = "none";
     var cnt=0;
     function CountFun(){
       cnt=parseInt(cnt)+parseInt(1);
@@ -23,6 +24,6 @@
   </script>
   <div id="showCount"></div>
   <input type="button" id="btnClick" value="Click me" onclick="CountFun()">
-  <div id="test" style="none">Test</div>                                                       
+  <div id="test">Test</div>                                                       
 
 </body></html>
