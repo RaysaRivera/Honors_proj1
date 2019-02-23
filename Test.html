@@ -13,12 +13,19 @@
 </head>
 
 <body>
-  <div id="showCount"></div>
+  /*<div id="showCount"></div>
   <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br><br>
-  <div id="test">Congratulations! You DDoS'd us!</div>                                                       
+  <div id="test">Congratulations! You DDoS'd us!</div>*/
+  
+  <form>
+    30 characters only:<br>
+    <input type="text" name="str"><br>
+  </form>
+  <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
+  <div id="bad">Too many characters!</div>
 
   <script type="text/javascript">
-    document.getElementById("test").style.display = "none";
+    /*document.getElementById("test").style.display = "none";
     var cnt=0;
     function CountFun(){
       cnt=parseInt(cnt)+parseInt(1);
@@ -26,6 +33,13 @@
       divData.innerHTML="Submitting. Please wait...";//this part has been edited
       if (cnt > 9)
         document.getElementById("test").style.display = "block";
+    }*/
+    
+    document.getElementById("bad").style.display = "none";
+    function submitClick() {
+      var sr = document.getElementById("str");
+      if (sr.length > 30)
+        document.getElementById("bad").style.display = "block";
     }
   </script>
 </body></html>
