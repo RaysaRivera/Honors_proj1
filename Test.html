@@ -23,6 +23,8 @@
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
   <div id="bad">Too many characters!</div>
+  
+  <p id="demo"></p>
 
   <script type="text/javascript">
     /*document.getElementById("test").style.display = "none";
@@ -38,6 +40,7 @@
     document.getElementById("bad").style.display = "none";
     function submitClick() {
       var sr = document.getElementById("str");
+      document.getElementById("demo").innerHTML = sr;
       if (sr.length > 30)
         document.getElementById("bad").style.display = "block";
     }
