@@ -41,7 +41,7 @@
     function submitClick() {
       var sr = document.getElementById("str");
       document.getElementById("demo").innerHTML = sr.elements[0].value;
-      if (sr.length > 30)
+      if (sr.elements[0].length > 30)
         document.getElementById("bad").style.display = "block";
     }
   </script>
