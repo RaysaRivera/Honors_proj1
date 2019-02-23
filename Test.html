@@ -14,7 +14,7 @@
 
 <body>
   <div id="showCount"></div>
-  <input type="button" id="btnClick" value="Click me" onclick="CountFun()"><br><br>
+  <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br><br>
   <div id="test">Congratulations! You DDoS'd us!</div>                                                       
 
   <script type="text/javascript">
@@ -23,7 +23,7 @@
     function CountFun(){
       cnt=parseInt(cnt)+parseInt(1);
       var divData=document.getElementById("showCount");
-      divData.innerHTML="Submitting...";//this part has been edited
+      divData.innerHTML="Submitting. Please wait...";//this part has been edited
       if (cnt > 9)
         document.getElementById("test").style.display = "block";
     }
