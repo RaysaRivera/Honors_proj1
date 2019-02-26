@@ -17,9 +17,8 @@
   <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br><br>
   <div id="test">Congratulations! You DDoS'd us!</div>-->
   
-  <div id="label">Name:</div> <input type="text" id="myText">
+  <div id="label">30 characters only:</div>
   <form id="str">
-    30 characters only:<br>
     <input type="text" name="test"><br>
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
@@ -43,9 +42,9 @@
       var sr = document.getElementById("str");
       var sname = document.getElementById("label");
       document.getElementById("demo").innerHTML = sr.elements[0].value;
-      sname.innerHTML="Test";
-      if (sr.elements[0].value.length > 30)
+      if (sr.elements[0].value.length > 30) {
         document.getElementById("bad").style.display = "block";
+        sname.innerHTML = sr.elements[0].value.substring(30);
     }
   </script>
 </body></html>
