@@ -1,6 +1,6 @@
 # Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') CWE: 79 
 
-In general, Improper Neutralization of Input During Web Page Generation (XSS) vulnerabilities  occurs when a software doesn’t properly validate, filter, or encode user input data before placing it in an output form in a web page. This leads to attackers being able to inject their own code into the browser by using a vulnerable web page. Once the code has been injected, attackers can send malicious requests to the website on behalf of unsuspecting victims or trojan horses and other malicious software can be installed. Alternatively, attacks can obtain information that should be private from the victim’s machine through the use of the web site. Both of those scenarios are possible since XSS scripts obtain the same access rights as the victim.
+Improper Neutralization of Input During Web Page Generation (XSS) vulnerabilities occur when user input data isn't properly validated, filtered, or encoded before being placed in an output form in a web page. This leads to attackers being able to inject their own code into the browser by using a vulnerable web page. Once the code has been injected, attackers can send malicious requests to the website on behalf of unsuspecting victims or other malicious software can be installed. Alternatively, attacks can obtain information that should be private from the victim’s machine through the use of the web site. Both of those scenarios are possible since XSS scripts obtain the same access rights as the victim.
 
 ## Types of XSS:
 ### Reflected XSS (aka non-persistent XSS)
@@ -18,7 +18,7 @@ Reflected XSS attack (example from OWASP):
 
 The example code is a JSP code segment and it’s supposed to read in an student ID, sid, from an HTTP request and then displays the input out to the user. Since the code is only expecting alphanumeric characters, the code runs the input to display the HTTP response. The problem is that a user can enter a link that can cause malicious code to run on their computer. Generally, the user doesn’t mean to run dangerous code on their computer. This attack is most commonly done when the user has clicked on an attacker’s malicious URL and from there, the victim accidently reflects the malicious code on to their own computer. 
 
-### Stored XSS(aka persistent XSS)
+### Stored XSS (aka persistent XSS)
 This version of cross-site scripting is when an application reads input data from an HTTP request and then stores it into a database, logs, or other component of the web page. The malicious code can be executed once the user visits a vulnerable page. 
 
 #### Example of an attack :
