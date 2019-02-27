@@ -49,3 +49,8 @@ The results after the malicious command are:
 
 ***Add a question of similiar malicious queries and ask which is another malicious query***
 
+[Injection Attacks](https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_lesson1)
+
+[SQL Injection Prevention and Solution](https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_lesson3)
+
+
