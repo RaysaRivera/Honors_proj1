@@ -10,3 +10,5 @@ Generally, attackers use this attack to gather privileged information from the d
 
 ***Ask a conceptual question about injection attacks***
 
+[Basics of SQL](https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_lesson)
+[Example of a SQL Injection](https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_lesson2)
