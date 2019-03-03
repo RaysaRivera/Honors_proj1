@@ -44,7 +44,7 @@ As a real world example, the Code Red worm (named for the flavor of Mountain Dew
     <input type="text" name="test"><br>
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
-  <div id="bad">Too many characters!</div>
+  <div id="bad" style="none">Too many characters!</div>
 
 <script type="text/javascript">
 	
