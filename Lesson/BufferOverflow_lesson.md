@@ -44,7 +44,7 @@ As a real world example, the Code Red worm (named for the flavor of Mountain Dew
     <input type="text" name="test" size="100"><br>
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
-  <div id="bad" style="none">Too many characters!</div>
+  <div id="bad" style="none">Congratulations! You found the buffer overflow!</div>
 	<p id="demo"></p>
 
 <script type="text/javascript">
@@ -53,8 +53,9 @@ As a real world example, the Code Red worm (named for the flavor of Mountain Dew
     	function submitClick() {
       		var sr = document.getElementById("str");
       		var sname = document.getElementById("label");
-      		document.getElementById("demo").innerHTML = sr.elements[0].value;
-      		if (sr.elements[0].value.length > 30) {
+      		if (sr.elements[0].value.length < 30) {
+			document.getElementById("demo").innerHTML = sr.elements[0].value;
+      		} else {
 			document.getElementById("bad").style.display = "block";
         		sname.innerHTML = sr.elements[0].value.substring(30);
       		}
