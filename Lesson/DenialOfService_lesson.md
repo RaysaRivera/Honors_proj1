@@ -15,7 +15,8 @@ On March 5th, 2018, the largest DDoS attack ever recorded was pointed at a custo
   <form id="str">
     <input type="text" name="test" size="100"><br>
   </form>
-  <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br><br>
+  <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br>
+  <div id="showCount"></div><br><br>
   <div id="test">Congratulations! You DDoS'd us!</div>
   
   <script type="text/javascript">
@@ -24,7 +25,7 @@ On March 5th, 2018, the largest DDoS attack ever recorded was pointed at a custo
     function CountFun(){
       cnt=parseInt(cnt)+parseInt(1);
       var divData=document.getElementById("showCount");
-      divData.innerHTML="Submitting. Please wait...";//this part has been edited
+      divData.innerHTML="Submitting. Please wait...";
       if (cnt > 9)
         document.getElementById("test").style.display = "block";
     }
