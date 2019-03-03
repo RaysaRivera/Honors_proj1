@@ -41,7 +41,7 @@ As a real world example, the Code Red worm (named for the flavor of Mountain Dew
 <body>
 <div id="label">How did we do? Send your input back here (30 characters only):</div>
   <form id="str">
-    <input type="text" name="test" width="100" height="50"><br>
+    <input type="text" name="test" style="height:200px" size="100"><br>
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
   <div id="bad" style="none">Too many characters!</div>
