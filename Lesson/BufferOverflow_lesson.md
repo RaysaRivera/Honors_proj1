@@ -39,10 +39,25 @@ As a real world example, the Code Red worm (named for the flavor of Mountain Dew
 [A demonstration of the worm can be seen here](https://www.youtube.com/watch?v=iu48QBJP_p0)
 
 <body>
-<div id="label">30 characters only:</div>
+<div id="label">How did we do? Send your input back here (30 characters only):</div>
   <form id="str">
     <input type="text" name="test"><br>
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
   <div id="bad">Too many characters!</div>
+
+<script type="text/javascript">
+	
+	document.getElementById("bad").style.display = "none";
+    	function submitClick() {
+      		var sr = document.getElementById("str");
+      		var sname = document.getElementById("label");
+      		document.getElementById("demo").innerHTML = sr.elements[0].value;
+      		if (sr.elements[0].value.length > 30) {
+			document.getElementById("bad").style.display = "block";
+        		sname.innerHTML = sr.elements[0].value.substring(30);
+      		}
+    	}
+</script>
+
 </body>
