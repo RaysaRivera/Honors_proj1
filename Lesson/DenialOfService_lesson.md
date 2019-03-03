@@ -9,3 +9,25 @@ Most DoS attacks are called distributed denial of service (DDoS) attacks. These 
 Defense against DoS attacks can be incredibly difficult to create and implement, as malicious and benign traffic can be hard to differentiate. While there are no specific defenses to DoS attacks, mitigations can be created to make the amount of requests necessary to DoS a server much larger. First, all ports and servers not necessary to access from the internet should be hidden or closed to prevent internet traffic attacks. Spoofed addresses can be prevented from accessing your server, preventing attacks from hidden origins from occurring. Filters and modified response systems can prevent primitive attacks, while upgraded servers and specific services can mitigate more advanced attacks. 
 
 On March 5th, 2018, the largest DDoS attack ever recorded was pointed at a customer of Arbor Networks, a server and network company. This came just days after the prvious world record setter occured against code depository Github. Both attacks took advantage of a a service called Memcached, which not only does not authenticate traffic that goes through it, but also amplifies the packet size by a factor of 50,000. This led to an attack of 1.7 Tbps against Arbor and 1.5 Tbps against Github. Interestingly enough, both attacks did not create a large outage, notably due to both systems having mitigation services and techniques in place. In the Arbor Networks case, a blocked port prevented that traffic from reaching an effective target and a successful attack.
+
+<body>
+  <div id="label">How did we do? Send your input back here:</div>
+  <form id="str">
+    <input type="text" name="test" size="100"><br>
+  </form>
+  <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br><br>
+  <div id="test">Congratulations! You DDoS'd us!</div>
+  
+  <script type="text/javascript">
+    document.getElementById("test").style.display = "none";
+    var cnt = 0;
+    function CountFun(){
+      cnt=parseInt(cnt)+parseInt(1);
+      var divData=document.getElementById("showCount");
+      divData.innerHTML="Submitting. Please wait...";//this part has been edited
+      if (cnt > 9)
+        document.getElementById("test").style.display = "block";
+    }
+  
+  </script>
+  </body>
