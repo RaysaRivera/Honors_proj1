@@ -32,7 +32,7 @@ char *fgets(char *s, int n, FILE *stream);
 
 This function will prevent inputting greater than maximum amount of characters "n", though it's still important to sanitize input before using it.  Otherwise, it is the programmer's responsibility to know of this vulnerability and ensure they check input to prevent an attack.
 
-As a real world example, the Code Red worm (named for the flavor of Mountain Dew drank at the time of discovery) was a virus released in July of 2001 and observed just a week later, after reaching 359,000 hosts. The worm spread using a buffer overflow vulnerability in Microsoft's IIS web server application. By inputting a long string of the character 'N', executable code was injected into the operating system to infect the host with the worm. After being infected, the host was used to DDoS on certain IP's, including the White House's servers.
+As a real world example, the Code Red worm (named for the flavor of Mountain Dew drink at the time of discovery) was a virus released in July of 2001 and observed just a week later, after reaching 359,000 hosts. The worm spread using a buffer overflow vulnerability in Microsoft's IIS web server application. By inputting a long string of the character 'N', executable code was injected into the operating system to infect the host with the worm. After being infected, the host was used to DDoS on certain IP's, including the White House's servers.
 
 [More info can be found on the wiki page here.](https://en.wikipedia.org/wiki/Code_Red_(computer_worm))	
 
