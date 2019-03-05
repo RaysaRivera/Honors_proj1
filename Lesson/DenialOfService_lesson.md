@@ -11,13 +11,13 @@ Defense against DoS attacks can be incredibly difficult to create and implement,
 On March 5th, 2018, the largest DDoS attack ever recorded was pointed at a customer of Arbor Networks, a server and network company. This came just days after the prvious world record setter occured against code depository Github. Both attacks took advantage of a a service called Memcached, which not only does not authenticate traffic that goes through it, but also amplifies the packet size by a factor of 50,000. This led to an attack of 1.7 Tbps against Arbor and 1.5 Tbps against Github. Interestingly enough, both attacks did not create a large outage, notably due to both systems having mitigation services and techniques in place. In the Arbor Networks case, a blocked port prevented that traffic from reaching an effective target and a successful attack.
 
 <body>
+  <div id="test">Congratulations! You DDoS'd us!</div><br><br>
   <div id="label">How did we do? Send your input back here:</div>
   <form id="str">
     <input type="text" name="test" size="100"><br>
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br>
-  <div id="showCount"></div><br><br>
-  <div id="test">Congratulations! You DDoS'd us!</div>
+  <div id="showCount"></div>
   
   <script type="text/javascript">
     document.getElementById("test").style.display = "none";
