@@ -66,34 +66,72 @@
   const submitButton = document.getElementById("submit");
   const myQuestions = [
     {
-      question: "What is the result from: SELECT Surname WHERE Username = 'SaLy' ?",
+      question: "Which of the following is correct?",
       answers: {
-        a: "Sarah",
-        b: "712",
-        c: "Lynn",
-        d: "Pierce"
+        a: "Spectre is a hardware based vulnerability, but Meltdown is not",
+        b: "Both Spectre and Meltdown are hardware based vulnerabilities",
+        c: "Spectre is a software based vulnerability, but Meltdown is not",
+        d: "Both Spectre and Meltdown are software based vulnerabilities"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "What causes the Spectre vulnerability?",
+      answers: {
+        a: "out-of-order execution in the kernel",
+        b: "branch prediction from microprocessors",
+        c: "use of speculative execution",
+        d: "a and b",
+        e: "b and c",
+        f: "a and c"
+      },
+      correctAnswer: "e"
+    },
+    {
+      question: "What causes the Meltdown vulnerabilty?",
+      answers: {
+        a: "out-of-order execution in the kernel",
+        b: "branch prediction from microprocessors",
+        c: "use of speculative execution",
+        d: "a and b",
+        e: "b and c",
+        f: "a and c"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Which brand of processor had the most issues with the Meltdown/Spectre vulnerabilties?",
+      answers: {
+        a: "AMD",
+        b: "ARM",
+        c: "Intel",
+        d: "Trick question, all were affected equally"
       },
       correctAnswer: "c"
     },
     {
-      question: "What can an injection attack do?",
+      question: "There is only one version of Spectre and one version of Meltdown",
       answers: {
-        a: "Create access despite no proper authorization",
-        b: "Delete entries in the database",
-        c: "Create entries in the database",
-        d: "All of the above"
+        a: "True",
+        b: "False",
       },
-      correctAnswer: "d"
+      correctAnswer: "b"
     },
     {
-      question: "Which of the following is malicious?",
+      question: "Traces of the Meltdown/Spectre attack can be found in traditional log files",
       answers: {
-        a: "1",
-        b: "2",
-        c: "3",
-        d: "4"
+        a: "True",
+        b: "False",
       },
-      correctAnswer: "d"
+      correctAnswer: "b"
+    },
+    {
+      question: "Intel has supposedly added hardware and firmware mitigations regarding Spectre and Meltdown vulnerabilities to its latest processors.",
+      answers: {
+        a: "True",
+        b: "False",
+      },
+      correctAnswer: "a"
     }
   ];
 
