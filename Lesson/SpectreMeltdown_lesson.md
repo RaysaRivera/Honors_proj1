@@ -107,3 +107,5 @@ Even web browsers have committed to protecting against Spectre Attacks, Google s
 In mid October of 2018, MIT researchers suggested a approach to preventing Spectre attacks which is called DAWG (Dynamically Allocated Way Guard) and suggests better security without needing to compromise performance.
 
 On October 8, 2018, Intel supposedly added hardware and firmware mitigations regarding Spectre and Meltdown vulnerabilities to its latest processors.
+
+[Test your knowledge of Spectre/Meltdown here] (https://github.com/RaysaRivera/Honors_proj1/blob/master/Lesson/Quiz_trial.html)
