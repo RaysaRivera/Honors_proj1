@@ -5,7 +5,7 @@ if (window.openDatabase) {
 
     //create the cars table using SQL for the database using a transaction
     mydb.transaction(function (t) {
-          t.executeSql("DROP TABLE users");
+          //t.executeSql("DROP TABLE users");
           t.executeSql("CREATE TABLE users (id INTEGER PRIMARY KEY ASC, username TEXT, password TEXT)");
           t.executeSql("INSERT INTO users (username, password) VALUES ('PrCa', 'password101')");
           t.executeSql("INSERT INTO users (username, password) VALUES ('ToCh', 'angelW0rd')");
