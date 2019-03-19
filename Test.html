@@ -56,12 +56,13 @@
     function submitClick() {
       var x = document.getElementById("user");
       var y = document.getElementById("len");
-      var t = document.getElementById("tab").rows[0].cells;
+      var t1 = document.getElementById("tab").rows[0].cells[0];
+      var t2 = document.getElementById("tab").rows[0].cells[1];
       if (document.getElementById("user").value.length > document.getElementById("len").value) {
-        t[0].innerHTML = x.value.substring(0, y);
-        t[1].innerHTML = x.value.substring(y);
+        t1.innerHTML = x.value.substring(0, y);
+        t2.innerHTML = x.value.substring(y);
       } else {
-        t[0].innerHTML = x.value;
+        t1.innerHTML = x.value;
       }
     }
   </script>
