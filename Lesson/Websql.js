@@ -12,7 +12,7 @@ if (window.openDatabase) {
           t.executeSql("INSERT INTO users (username, password) VALUES ('SaLy', 'pumpkin314')");
           t.executeSql("INSERT INTO users (username, password) VALUES ('DiNg', 'bo0kworm')");
           t.executeSql("INSERT INTO users (username, password) VALUES ('WaPi', 'phoeb3')");
-          t.executeSql("INSERT INTO users (username, password) VALUES ('ViAd', '3kiat	')");
+          t.executeSql("INSERT INTO users (username, password) VALUES ('ViAd', '3kiat')");
     });
 
 } else {
@@ -47,36 +47,13 @@ function outputCars() {
         mydb.transaction(function (t) {
           var username = document.getElementById("inusername").value;
           var password = document.getElementById("inpassword").value;
-            t.executeSql("SELECT * FROM users", [], updateCarList);
-          //  t.executeSql("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'", [], updateCarList);
+          //  t.executeSql("SELECT * FROM users", [], updateCarList);
+          var query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+            t.executeSql(query, [], updateCarList);
+          //  t.executeSql("SELECT * FROM users WHERE username = '" + username + "' OR 1 = 1", [], updateCarList);
 
         });
     } else {
         alert("db not found, your browser does not support web sql!");
     }
 }
-
-//function to add the car to the database
-function addCar() {
-    //check to ensure the mydb object has been created
-    if (mydb) {
-        //get the values of the username and password text inputs
-        var username = document.getElementById("inusername").value;
-        var password = document.getElementById("inpassword").value;
-
-        //Test to ensure that the user has entered both a username and password
-        if (username !== "" && password !== "") {
-            //Insert the user entered details into the cars table, note the use of the ? placeholder, these will replaced by the data passed in as an array as the second parameter
-            mydb.transaction(function (t) {
-                t.executeSql("INSERT INTO users (username, password) VALUES ('" + username + "','" + password + "')");
-                outputCars();
-            });
-        } else {
-            alert("You must enter a username and password!");
-        }
-    } else {
-        alert("db not found, your browser does not support web sql!");
-    }
-}
-
-outputCars();
