@@ -63,7 +63,7 @@ function addCar() {
         if (make !== "" && model !== "") {
             //Insert the user entered details into the cars table, note the use of the ? placeholder, these will replaced by the data passed in as an array as the second parameter
             mydb.transaction(function (t) {
-                t.executeSql("INSERT INTO cars (make, model) VALUES (" + make + "," + model")");
+                t.executeSql("INSERT INTO cars (make, model) VALUES (" + make + "," + model + ")");
                 outputCars();
             });
         } else {
