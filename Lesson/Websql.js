@@ -34,7 +34,7 @@ function updateCarList(transaction, results) {
         //Get the current row
         var row = results.rows.item(i);
 
-        listholder.innerHTML += "<li>" + row.make + " - " + row.model //+ " (<a href='javascript:void(0);' onclick='deleteCar(" + row.id + ");'>Delete Car</a>)";
+        listholder.innerHTML += "<li>" + row.make + " - " + row.model; //+ " (<a href='javascript:void(0);' onclick='deleteCar(" + row.id + ");'>Delete Car</a>)";
     }
 
 }
