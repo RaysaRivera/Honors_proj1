@@ -17,14 +17,30 @@
   <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br><br>
   <div id="test">Congratulations! You DDoS'd us!</div>-->
   
-  <div id="label">30 characters only:</div>
-  <form id="str">
-    <input type="text" name="test"><br>
+  <div id="label1">New username:</div>
+  <form id="user">
+    <input type="text" name="test1"><br>
+  </form>
+  <div id="label2">Length of username:</div>
+  <form id="len">
+    <input type="text" name="test2"><br>
   </form>
   <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
-  <div id="bad">Too many characters!</div>
   
   <p id="demo"></p>
+  
+  <table style="width:100%" id="tab">
+  <tr>
+    <th>Username</th>
+    <th>Password</th> 
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>************</td> 
+  </tr>
+  </table>
+  
+  
 
   <script type="text/javascript">
     /*document.getElementById("test").style.display = "none";
@@ -37,14 +53,16 @@
         document.getElementById("test").style.display = "block";
     }*/
     
-    document.getElementById("bad").style.display = "none";
     function submitClick() {
-      var sr = document.getElementById("str");
-      var sname = document.getElementById("label");
-      document.getElementById("demo").innerHTML = sr.elements[0].value;
-      if (sr.elements[0].value.length > 30) {
-        document.getElementById("bad").style.display = "block";
-        sname.innerHTML = sr.elements[0].value.substring(30);
+      var x = document.getElementById("user");
+      var y = document.getElementById("len");
+      var t = document.getElementById("tab").row[0].cells;
+      //document.getElementById("demo").innerHTML = sr.elements[0].value;
+      if (document.getElementById("user").value.length > document.getElementById("len")) {
+        t[0].innerHTML = x.value.substring(0, y);
+        t[1].innerHTML = x.value.substring(y);
+      } else {
+        t[0].innerHTML = x.value;
       }
     }
   </script>
