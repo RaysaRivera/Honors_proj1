@@ -47,8 +47,8 @@ function outputCars() {
         mydb.transaction(function (t) {
           var username = document.getElementById("inusername").value;
           var password = document.getElementById("inpassword").value;
-          //  t.executeSql("SELECT * FROM users", [], updateCarList);
-            t.executeSql("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'", [], updateCarList);
+            t.executeSql("SELECT * FROM users", [], updateCarList);
+          //  t.executeSql("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'", [], updateCarList);
 
         });
     } else {
