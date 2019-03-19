@@ -54,14 +54,10 @@
     }*/
     
     function submitClick() {
-      document.getElementById("demo").innerHTML = "done1";
       var x = document.getElementById("user");
-      document.getElementById("demo").innerHTML = "done2";
       var y = document.getElementById("len");
-      document.getElementById("demo").innerHTML = "done3";
       var t = document.getElementById("tab").rows[0].cells;
-      document.getElementById("demo").innerHTML = "done4";
-      if (document.getElementById("user").value.length > document.getElementById("len")) {
+      if (document.getElementById("user").value.length > document.getElementById("len").value) {
         t[0].innerHTML = x.value.substring(0, y);
         t[1].innerHTML = x.value.substring(y);
       } else {
