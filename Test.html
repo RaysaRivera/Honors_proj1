@@ -54,10 +54,10 @@
     }*/
     
     function submitClick() {
+      document.getElementById("demo").innerHTML = "done";
       var x = document.getElementById("user");
       var y = document.getElementById("len");
-      var t = document.getElementById("tab").row[0].cells;
-      document.getElementById("demo").innerHTML = "done";
+      var t = document.getElementById("tab").rows[0].cells;
       if (document.getElementById("user").value.length > document.getElementById("len")) {
         t[0].innerHTML = x.value.substring(0, y);
         t[1].innerHTML = x.value.substring(y);
