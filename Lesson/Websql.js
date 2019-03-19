@@ -63,7 +63,7 @@ function addCar() {
         if (make !== "" && model !== "") {
             //Insert the user entered details into the cars table, note the use of the ? placeholder, these will replaced by the data passed in as an array as the second parameter
             mydb.transaction(function (t) {
-                t.executeSql("INSERT INTO cars (make, model) VALUES (?, ?)", [make, model]);
+                t.executeSql("INSERT INTO cars (make, model) VALUES (" + make + "," + model")");
                 outputCars();
             });
         } else {
@@ -77,7 +77,7 @@ function addCar() {
 
 //function to remove a car from the database, passed the row id as it's only parameter
 
-function deleteCar(id) {
+/*function deleteCar(id) {
     //check to ensure the mydb object has been created
     if (mydb) {
         //Get all the cars from the database with a select statement, set outputCarList as the callback function for the executeSql command
@@ -87,6 +87,6 @@ function deleteCar(id) {
     } else {
         alert("db not found, your browser does not support web sql!");
     }
-}
+}*/
 
 outputCars();
