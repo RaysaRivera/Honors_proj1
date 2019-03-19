@@ -5,7 +5,12 @@ if (window.openDatabase) {
 
     //create the cars table using SQL for the database using a transaction
     mydb.transaction(function (t) {
-        t.executeSql("CREATE TABLE IF NOT EXISTS cars (id INTEGER PRIMARY KEY ASC, make TEXT, model TEXT)");
+        //t.executeSql("CREATE TABLE IF NOT EXISTS cars (id INTEGER PRIMARY KEY ASC, make TEXT, model TEXT)");
+          t.executeSql("CREATE TABLE cars (id INTEGER PRIMARY KEY ASC, make TEXT, model TEXT)");
+        
+          t.executeSql("INSERT INTO cars (make, model) VALUES ("Volkswagon", "Buggy")";
+
+
     });
 
 } else {
