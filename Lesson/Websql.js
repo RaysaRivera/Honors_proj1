@@ -8,8 +8,6 @@ if (window.openDatabase) {
         t.executeSql("CREATE TABLE IF NOT EXISTS cars (id INTEGER PRIMARY KEY ASC, make TEXT, model TEXT)");
     });
 
-
-
 } else {
     alert("WebSQL is not supported by your browser!");
 }
@@ -31,7 +29,7 @@ function updateCarList(transaction, results) {
         //Get the current row
         var row = results.rows.item(i);
 
-        listholder.innerHTML += "<li>" + row.make + " - " + row.model + " (<a href='javascript:void(0);' onclick='deleteCar(" + row.id + ");'>Delete Car</a>)";
+        listholder.innerHTML += "<li>" + row.make + " - " + row.model //+ " (<a href='javascript:void(0);' onclick='deleteCar(" + row.id + ");'>Delete Car</a>)";
     }
 
 }
