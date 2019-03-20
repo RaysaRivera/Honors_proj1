@@ -16,9 +16,6 @@ Select queries return the selected data from a specific table when the condition
 |Wanda      | Pierce      | WaPi |phoeb3  |81      | Wanda_Pierce@hollywoo.com |
 |Vincent      | Adultman      | ViAd |3kiat  |63      | Vincent_Adultman@hollywoo.com |
 
-
-***ask a question about what info is returned in a given select query***
-
 ## Injection attacks
 
 As defined by ibm.com, an injection attack allows "an attacker to inject code into a program or query or inject malware onto a computer in order to execute remote commands that can read or modify a database, or change data on a web site."
@@ -26,8 +23,6 @@ As defined by ibm.com, an injection attack allows "an attacker to inject code in
 A SQL Injection attack is when an attacker alters SQL commands that use an input that is directly included as part of the query by having a command terminate early and/or adding their own command into the pre-existing query. The largest problem with SQL Injection attacks is that a SQL query is a rich tree structure, but is being treated as a string.
 
 Generally, attackers use this attack to gather privileged information from the database, to modify data, or to execute their own operating system commands. 
-
-***Ask a conceptual question about injection attacks***
 
 ## Example of an attack in PHP:
 
@@ -41,7 +36,6 @@ Users
 |Diane      | Nguyen      | DiNg |bo0kworm  |319      | Diane_Nguyen@hollywoo.com |
 |Wanda      | Pierce      | WaPi |phoeb3  |81      | Wanda_Pierce@hollywoo.com |
 |Vincent      | Adultman      | ViAd |3kiat  |63      | Vincent_Adultman@hollywoo.com |
-
 
 ### SQL Query
 ```
@@ -75,8 +69,6 @@ The results after the malicious command are:
 |Diane      | Nguyen      | DiNg |bo0kworm  |319      | Diane_Nguyen@hollywoo.com |
 |Wanda      | Pierce      | WaPi |phoeb3  |81      | Wanda_Pierce@hollywoo.com |
 |Vincent      | Adultman      | ViAd |3kiat  |63      | Vincent_Adultman@hollywoo.com |
-
-***Add a question of similiar malicious queries and ask which is another malicious query***
 
 ## How to prevent the attack: 
 Ensuring that there isn’t a user controllable input that is used directly in a SQL query can prevent injection attacks. You can do this through sanitizing the input, treating all input as a parameter, using regular expression to identify harmful code patterns and making sure that only necessary accounts have access to the database. 
