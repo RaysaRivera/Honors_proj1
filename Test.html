@@ -17,8 +17,10 @@
   <form action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input type="submit" value="Upload" name="submit" onclick="submitClick">
   </form>
+  
+  <p id="demo"></p>
   
   <!--<div id="showCount"></div>
   <input type="button" id="btnClick" value="Submit" onclick="CountFun()"><br><br>
@@ -61,17 +63,8 @@
     }*/
     
     function submitClick() {
-      var x = document.getElementById("user").elements[0].value;
-      var y = document.getElementById("len").elements[0].value;
-      var t1 = document.getElementById("tab").rows[1].cells[0];
-      var t2 = document.getElementById("tab").rows[1].cells[1];
-      var l = x.length - y;
-      if (l > 0) {
-        t1.innerHTML = x.substr(0, y);
-        t2.innerHTML = x.substring(y) + t2.innerHTML.substring(l);
-      } else {
-        t1.innerHTML = x;
-      }
+      var ext = getElementById("fileToUpload").split('.');
+      document.getElementById("demo").innerHTML = ext;
     }
   </script>
 </body></html>
