@@ -80,4 +80,4 @@ $username = mysqli_real_escape_string($con, $_POST['username']);
 $password = mysqli_real_escape_string($con, $_POST['password']);  
 $sql_command = "select * from users where username = '" . $username; $sql_command .= "' AND password = '" . $password . "'";  
 ```
-[Interactive database](https://github.com/RaysaRivera/Honors_proj1/Lesson/Websql)
+[Interactive database](https://raysarivera.github.io/Honors_proj1/Lesson/Websql)
