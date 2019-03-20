@@ -24,8 +24,8 @@
   <script type="text/javascript">
     
     function clicky() {
-      getElementById("test").innerHTML = "done";
-      var str = getElementById("f");
+      document.getElementById("test").innerHTML = "done";
+      var str = document.getElementById("f");
       var ext = str.substr(str.indexOf(".") + 1);
       document.getElementById("demo").innerHTML = ext;
     }
