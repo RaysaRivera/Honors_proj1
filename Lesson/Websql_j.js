@@ -47,11 +47,14 @@ function outputInfo(){
         mydb.transaction(function (t) {
           var username = document.getElementById("inusername").value;
           var password = document.getElementById("inpassword").value;
-            t.executeSql("SELECT * FROM users", [], updateInfoList);
-          var query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
-           // t.executeSql(query, [], updateInfoList);
-          //  t.executeSql("SELECT * FROM users WHERE username = '" + username + "' OR 1 = 1", [], updateInfoList);
-
+          if (username !== "" || password !== "") {
+            //  t.executeSql("SELECT * FROM users", [], updateInfoList);
+            var query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+              t.executeSql(query, [], updateInfoList);
+            //  t.executeSql("SELECT * FROM users WHERE username = '" + username + "' OR 1 = 1", [], updateInfoList);
+          } else {
+            alert("You must enter a username and password!");
+          }
         });
     } else {
         alert("db not found, your browser does not support web sql!");
