@@ -93,3 +93,26 @@ PHP Portion of code
 
 # Real World Example of the attack:
 Earlier this year, it was discovered discovered by researcher James Bercegay that “My Cloud” a popular personal cloud storage unit had this vulnerability. By exploiting this vulnerability Bercegay could replace any file on the server and gain control over the device. The code with the vulnerability appears to be left over from an earlier project called D-Link DNS-320L since there are identical vulnerabilities and misspelled function names, but this project had the vulnerabilities corrected in 2014. 
+
+<body>
+  <p>Got feedback for us? Submit a text file below:</p>
+  <input type="file" id="f">
+  <input type="button" value="Upload" name="submit" onclick="clicky()">
+  
+  <p id="demo"></p>
+
+  <script type="text/javascript">
+    
+    function clicky() {
+      var str = document.getElementById("f").value;
+      var ext = str.substr(str.indexOf(".") + 1);
+      //document.getElementById("demo").innerHTML = ext;
+      if (ext == "exe") {
+        document.getElementById("demo").innerHTML = "You have uploaded a possible virus to our server, congrats!";
+      }
+      if (ext == "txt") {
+        document.getElementById("demo").innerHTML = "Thank you for your feedback!";
+      }
+    }
+  </script>
+</body>
