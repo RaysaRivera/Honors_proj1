@@ -16,14 +16,14 @@
   
   <p>Select file to upload:</p>
   <input type="file" id="f">
-  <input type="submit" value="Upload" name="submit" onclick="submitClick()">
+  <input type="submit" value="Upload" name="submit" onclick="clicky()">
   
   <p id="test">test</p>
   <p id="demo"></p>
 
   <script type="text/javascript">
     
-    function submitClick() {
+    function clicky() {
       getElementById("test").innerHTML = "done";
       var str = getElementById("f");
       var ext = str.substr(str.indexOf(".") + 1);
