@@ -16,9 +16,9 @@ We will be presenting our project for review towards the end of April.
 
 You can contact the developers of this project at zachary_rush@student.uml.edu or raysa_riverabergollo@student.uml.edu.
 
-[Buffer Overflows](https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverflow_lesson)
+[Buffer Overflow](https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverflow_lesson)
 
-[Buffer Overruns](https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverrun_lesson)
+[Buffer Overread](https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverread_lesson)
 
 [Denial of Service](https://raysarivera.github.io/Honors_proj1/Lesson/DenialOfService_lesson)
 
