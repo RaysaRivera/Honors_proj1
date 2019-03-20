@@ -15,7 +15,7 @@
 <body>
   
     Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="file" id="f">
     <input type="submit" value="Upload" name="submit" onclick="submitClick">
   
   <p id="demo"></p>
@@ -61,7 +61,8 @@
     }*/
     
     function submitClick() {
-      var ext = getElementById("fileToUpload").split('.');
+      var str = getElementById("f");
+      var ext = str.substr(str.indexOf(".") + 1);
       document.getElementById("demo").innerHTML = ext;
     }
   </script>
