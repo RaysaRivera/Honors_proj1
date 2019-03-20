@@ -68,3 +68,48 @@ pl = p;
 ```
 
 The second if statement checks the bounds of the heartbeat to ensure the proper data is being sent. 
+
+Try to change the password by only submitting a new username.
+
+<body>
+  
+  <div id="label1">New username:</div>
+  <form id="user">
+    <input type="text" name="test1"><br>
+  </form>
+  <div id="label2">Length of username:</div>
+  <form id="len">
+    <input type="text" name="test2"><br>
+  </form>
+  <input type="button" id="btnClick" value="Submit" onclick="submitClick()"><br><br>
+  
+  <p id="demo"></p>
+  
+  <table id="tab">
+  <tr>
+    <th>Username</th>
+    <th>Password</th> 
+  </tr>
+  <tr>
+    <td>Test</td>
+    <td>hunter7</td> 
+  </tr>
+  </table>
+
+<script type="text/javascript">
+    
+    function submitClick() {
+      var x = document.getElementById("user").elements[0].value;
+      var y = document.getElementById("len").elements[0].value;
+      var t1 = document.getElementById("tab").rows[1].cells[0];
+      var t2 = document.getElementById("tab").rows[1].cells[1];
+      var l = x.length - y;
+      if (l > 0) {
+        t1.innerHTML = x.substr(0, y);
+        t2.innerHTML = x.substring(y) + t2.innerHTML.substring(l);
+      } else {
+        t1.innerHTML = x;
+      }
+    }
+  </script>
+</body></html>
