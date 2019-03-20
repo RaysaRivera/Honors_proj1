@@ -59,8 +59,8 @@
       var t1 = document.getElementById("tab").rows[1].cells[0];
       var t2 = document.getElementById("tab").rows[1].cells[1];
       if (x.length > y) {
-        t1.innerHTML = x.value.substring(0, y);
-        t2.innerHTML = x.value.substring(y);
+        t1.innerHTML = x.substring(0, y);
+        t2.innerHTML = x.substring(y);
       } else {
         t1.innerHTML = x;
       }
