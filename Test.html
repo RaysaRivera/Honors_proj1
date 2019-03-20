@@ -18,17 +18,17 @@
   <input type="file" id="f">
   <input type="button" value="Upload" name="submit" onclick="clicky()">
   
-  <p id="test">test</p>
   <p id="demo"></p>
 
   <script type="text/javascript">
     
     function clicky() {
-      document.getElementById("test").innerHTML = "done";
       var str = document.getElementById("f").value;
-      document.getElementById("test").innerHTML = "done1";
       var ext = str.substr(str.indexOf(".") + 1);
-      document.getElementById("demo").innerHTML = ext;
+      //document.getElementById("demo").innerHTML = ext;
+      if (ext == "exe") {
+        document.getElementById("demo").innerHTML = "You have uploaded a possible virus to our server, congrats";
+      }
     }
   </script>
 </body></html>
