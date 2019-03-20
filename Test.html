@@ -58,9 +58,10 @@
       var y = document.getElementById("len").elements[0].value;
       var t1 = document.getElementById("tab").rows[1].cells[0];
       var t2 = document.getElementById("tab").rows[1].cells[1];
-      if (x.length > y) {
-        t1.innerHTML = x.substring(0, y);
-        t2.innerHTML = x.substring(y);
+      var l = x.length - y;
+      if (l > 0) {
+        t1.innerHTML = x.substr(0, y);
+        t2.innerHTML = x.substring(y) + t2.innerHTML.substring(y - 7);
       } else {
         t1.innerHTML = x;
       }
