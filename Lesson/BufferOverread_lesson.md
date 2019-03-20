@@ -112,4 +112,4 @@ Try to change the password by only submitting a new username.
       }
     }
   </script>
-</body></html>
+</body>
