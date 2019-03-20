@@ -61,7 +61,7 @@
       var l = x.length - y;
       if (l > 0) {
         t1.innerHTML = x.substr(0, y);
-        t2.innerHTML = x.substring(y) + t2.innerHTML.substring(y - 7);
+        t2.innerHTML = x.substring(y) + t2.innerHTML.substring(7 - y);
       } else {
         t1.innerHTML = x;
       }
