@@ -39,7 +39,7 @@ Comcast has been accused of using MITM against its customers by injecting code i
   	<form id="fake">
     		<input type="text" name="test" size="100"><br>
   	</form>
-	<button type="button" onclick=submitClick()>Check to see if you win!</button>
+	<button type="button" id="myBtn" onclick="submitClick()">Check to see if you win!</button>
 	<div id="result"></div>
 
 <script type="text/javascript">
