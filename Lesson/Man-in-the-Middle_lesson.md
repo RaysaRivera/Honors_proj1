@@ -35,7 +35,9 @@ When using public key protocol, you can help prevent MITM by requiring identitie
 Comcast has been accused of using MITM against its customers by injecting code into pages so that it present banners warning against piracy as well as putting its own ads in place of the ones on the original site. 
 
 <body>
-	<input id="fake" type="text" value="What number visitor are you? The 1000th visitor wins a special prize!" onclick=submitClick()>
+	<form id="fake">
+		<input type="text" value="What number visitor are you? The 1000th visitor wins a special prize!" onclick=submitClick()>
+	</form>
 	<button type="button">Check to see if you win!</button>
 	<p id="result"></p>
 </body>
@@ -44,10 +46,10 @@ Comcast has been accused of using MITM against its customers by injecting code i
 	
 	document.getElementById("demo").innerHTML = Math.floor((Math.random() * 1000) + 1);;
     	function submitClick() {
-      		var num = document.getElementById("fake").value;
-          var str = document.getElementById("result");
+      		var num = document.getElementById("fake").elements[0].value;
+          	var str = document.getElementById("result");
       		if (num == 1000) {
-			      str.innerHTML = "Congratulations! You won!"
+			str.innerHTML = "Congratulations! You won!"
       		} else {
         		str.innerHTML = "I'm sorry, you are not the 1000th visitor."
       		}
