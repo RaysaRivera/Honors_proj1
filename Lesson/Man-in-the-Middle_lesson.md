@@ -40,7 +40,6 @@ Comcast has been accused of using MITM against its customers by injecting code i
 	</form>
 	<button type="button">Check to see if you win!</button>
 	<p id="result"></p>
-</body>
 
 <script type="text/javascript">
 	
@@ -55,4 +54,5 @@ Comcast has been accused of using MITM against its customers by injecting code i
       		}
     	}
 </script>
+</body>
 
