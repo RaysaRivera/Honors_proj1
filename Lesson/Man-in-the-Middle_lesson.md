@@ -35,9 +35,9 @@ When using public key protocol, you can help prevent MITM by requiring identitie
 Comcast has been accused of using MITM against its customers by injecting code into pages so that it present banners warning against piracy as well as putting its own ads in place of the ones on the original site. 
 
 <body>
-<input id="fake" type="text" value="What number visitor are you? The 1000th visitor wins a special prize!" onclick=submitClick()>
-<button type="button">Check to see if you win!</button>
-<p id="result"></p>
+	<input id="fake" type="text" value="What number visitor are you? The 1000th visitor wins a special prize!" onclick=submitClick()>
+	<button type="button">Check to see if you win!</button>
+	<p id="result"></p>
 </body>
 
 <script type="text/javascript">
