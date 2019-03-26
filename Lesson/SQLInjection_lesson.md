@@ -55,6 +55,7 @@ SELECT * FROM users WHERE username="" or "=" AND password=""or "=";
 The above command will return all rows since ""="" is always TRUE (aka a tautology).
 
 A similar exploit is for if the database is looking to return a user's information when given a specific userid. A malicious user could enter: "" OR 1 = 1; 
+
 SELECT * FROM users WHERE username='<username>' OR 1=1;
 
 The addition of OR 1 = 1; can make it so that the entire SQL query is a tautology and as a consequence, a user can retrieve the all of sensitive information from the database that should have only been visible for those with proper access.
