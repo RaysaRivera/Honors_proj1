@@ -50,6 +50,78 @@
     <div id="quiz"></div>
     <button id="submit">Get Results</button>
     <div id="results"></div>
+    <script>
+      const myQuestions = [
+    {
+      question: "Which of the following is correct?",
+      answers: {
+        a: "Spectre is a hardware based vulnerability, but Meltdown is not",
+        b: "Both Spectre and Meltdown are hardware based vulnerabilities",
+        c: "Spectre is a software based vulnerability, but Meltdown is not",
+        d: "Both Spectre and Meltdown are software based vulnerabilities"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "What causes the Spectre vulnerability?",
+      answers: {
+        a: "out-of-order execution in the kernel",
+        b: "branch prediction from microprocessors",
+        c: "use of speculative execution",
+        d: "a and b",
+        e: "b and c",
+        f: "a and c"
+      },
+      correctAnswer: "e"
+    },
+    {
+      question: "What causes the Meltdown vulnerabilty?",
+      answers: {
+        a: "out-of-order execution in the kernel",
+        b: "branch prediction from microprocessors",
+        c: "use of speculative execution",
+        d: "a and b",
+        e: "b and c",
+        f: "a and c"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Which brand of processor had the most issues with the Meltdown/Spectre vulnerabilties?",
+      answers: {
+        a: "AMD",
+        b: "ARM",
+        c: "Intel",
+        d: "Trick question, all were affected equally"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "There is only one version of Spectre and one version of Meltdown",
+      answers: {
+        a: "True",
+        b: "False",
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Traces of the Meltdown/Spectre attack can be found in traditional log files",
+      answers: {
+        a: "True",
+        b: "False",
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Intel has supposedly added hardware and firmware mitigations regarding Spectre and Meltdown vulnerabilities to its latest processors.",
+      answers: {
+        a: "True",
+        b: "False",
+      },
+      correctAnswer: "a"
+    }
+  ];
+    </script>
     <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
 
 
