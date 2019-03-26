@@ -48,10 +48,16 @@ SELECT * FROM users WHERE username='<username>' AND password='<password>'
 . $_POST['username'];  is used to have the user submit the information inside the brackets
     
 ### Command that could be used to exploit the attack
-Before entering the password portion, a malicious user could enter a “<userid> OR 1=1; --”
-SELECT * FROM users WHERE username='<username>' OR 1=1; -- ' AND password='<password>'
+Rather than adding the proper credentials, a malicious user could enter: " or ""="
 
-The addition of “1 = 1;--” can make it so that the entire SQL query is a tautology and as a consequence, a user can retrieve the all of sensitive information from the database that should have only been visible for those with proper access.
+SELECT * FROM users WHERE username="" or "=" AND password=""or "=";
+
+The above command will return all rows since ""="" is always TRUE (aka a tautology).
+
+A similar exploit is for if the database is looking to return a user's information when given a specific userid. A malicious user could enter: "" OR 1 = 1; 
+SELECT * FROM users WHERE username='<username>' OR 1=1;
+
+The addition of OR 1 = 1; can make it so that the entire SQL query is a tautology and as a consequence, a user can retrieve the all of sensitive information from the database that should have only been visible for those with proper access.
 
 The expected results after entering the proper credentials for ToCh:
 
