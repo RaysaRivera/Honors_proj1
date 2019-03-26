@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQL Review Questions</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+
+    .question{
+    	font-weight: 600;
+    }
+
+    .answers {
+      margin-bottom: 20px;
+    }
+
+    .answers label{
+      display: block;
+    }
+
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_lesson" id="home-link">SQL Injection Review </a></h1>
+    </header>
+
+    <div id="content">
+      <h2>Database Table</h2>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>User ID</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td>Princess</td>
+          <td>Carolyn</td>
+          <td>PrCa</td>
+          <td>password101</td>
+          <td>17</td>
+          <td>Princess_Carolyn@hollywoo.com</td>
+        </tr>
+        <tr>
+          <td>Todd</td>
+          <td>Chavez</td>
+          <td>ToCh</td>
+          <td>angelW0rd</td>
+          <td>221</td>
+          <td>Todd_Chavez@hollywoo.com</td>
+        </tr>
+        <tr>
+          <td>Sarah</td>
+          <td>Lynn</td>
+          <td>SaLy</td>
+          <td>pumpkin314</td>
+          <td>712</td>
+          <td>Sarah_Lynn@hollywoo.com</td>
+        </tr>
+        <tr>
+          <td>Diane</td>
+          <td>Nguyen</td>
+          <td>DiNg</td>
+          <td>bo0kworm</td>
+          <td>319</td>
+          <td>Diane_Nguyen@hollywoo.com</td>
+        </tr>
+        <tr>
+          <td>Wanda</td>
+          <td>Pierce</td>
+          <td>WaPi</td>
+          <td>phoeb3</td>
+          <td>81</td>
+          <td>Wanda_Pierce@hollywoo.com</td>
+        </tr>
+        <tr>
+          <td>Vincent</td>
+          <td>Adultman</td>
+          <td>ViAd</td>
+          <td>3kiat</td>
+          <td>63</td>
+          <td>Vincent_Adultman@hollywoo.com</td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+    var myQuestions = [
+      {
+        question: "What is the result from: SELECT Surname WHERE Username = 'SaLy' ?",
+        answers: {
+          a: "Sarah",
+          b: "712",
+          c: "Lynn",
+          d: "Pierce"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "What of this following would get the result of 'Diane_Nguyen@hollywoo.com' ?",
+        answers: {
+          a: "SELECT email FROM users WHERE username = 'PrCa'",
+          b: "SELECT email FROM users WHERE surname = 'Pierce'",
+          c: "SELECT email FROM users WHERE UserId = '17'",
+          d: "SELECT email FROM users WHERE password = 'bo0kworm'"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "What can an injection attack do??",
+        answers: {
+          a: "Create access despite no proper authorization",
+          b: "Delete entries in the database",
+          c: "Create entries in the database",
+          d: "All of the above"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Which of the following can be malicious?",
+        answers: {
+          a: "Using user input directly in the code",
+          b: "Sanitizing it before using user input",
+          c: "Using regular expressions to identify harmful code in the user input",
+          d: "Ensuring that only necessary accounts have access to the database"
+        },
+        correctAnswer: "a"
+      }
+    ]; </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+  </script>
+
+
+  </body>
+</html>
