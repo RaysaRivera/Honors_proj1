@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buffer Overflow Review Questions</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+    .question{
+    	font-weight: 600;
+    }
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label{
+      display: block;
+    }
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_lesson" id="home-link">SQL Injection Review </a></h1>
+    </header>
+    
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+    var myQuestions = [
+      {
+        question: "What is a buffer overflow?",
+        answers: {
+          a: "inputting an unexpected type of data",
+          b: "inputting more data than can be properly handled"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Which can a buffer overflow exploit do?",
+        answers: {
+          a: "prevent an application from accessing necessary data",
+          b: "create a DoS attack",
+          c: "inject executable code into an area of memory with execution privilege",
+          d: "all of the above",
+          e: "none of the above"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Why aren’t more compile-time defenses used?",
+        answers: {
+          a: "they use virtual memory to ensure memory space",
+          b: "they are extremely difficult to implement as the amount of dynamic memory needed is not known until run-time"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Most modern languages have input functions that either check for data size to prevent a buffer overflow, or allow for an extra argument to describe max length of input.",
+        answers: {
+          a: "true",
+          b: "false"
+        },
+        correctAnswer: "a"
+      }
+    ]; </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+  </script>
+  </body>
+</html>
