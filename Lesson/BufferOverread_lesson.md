@@ -2,7 +2,7 @@ Buffer overread is a vulnerability in computer systems that occurs when bounds c
 
 Reading data from a system can allow a user to see code or queries that release information that makes the system vulnerable, either by giving out usernames or passwords of users or by seeing how a system infrastructure is setup. 
 
-The following is an example of code with a buffer overread vulnerablility, taken from it's [CWE page](https://cwe.mitre.org/data/definitions/126.html). 
+The following is an example of code with a buffer overread vulnerability, taken from it's [CWE page](https://cwe.mitre.org/data/definitions/126.html). 
 
 ```C
 int main(int argc, char **argv) {
@@ -39,7 +39,7 @@ To defend against a buffer overread, a programmer must use strong bounds checkin
 
 These lines will always prevent a buffer overread from a function expecting a null terminator at the end of a c-string.
 
-In 2014, a vulnerability in the popular cryptography library OpenSSL was discovered to be in 17% of secure web servers across the internet, and was introduced two years prior, meaning that millions of servers were vulnerable to buffer overreads which could lead to insecure cryptography or data. Named for the "heartbeat" property of TLS, Heartbleed took advantage of client-decided bounds checking to read data beyond the buffer given to the server. In a heartbeat, a client checks to see if a server is still ready to respond after a portion of time where no communication has occured. A client sends a message with the message size to the site, to which the server would read the meassage to the message size, and send back the same message to ensure readiness to respond a different message. If the client sent a message size larger than the message it sent, the server would send contiguous data found after the message back to the client, allowing for the client to read server data otherwise hidden. 
+In 2014, a vulnerability in the popular cryptography library OpenSSL was discovered to be in 17% of secure web servers across the internet, and was introduced two years prior, meaning that millions of servers were vulnerable to buffer overreads which could lead to insecure cryptography or data. Named for the "heartbeat" property of TLS, Heartbleed took advantage of client-decided bounds checking to read data beyond the buffer given to the server. In a heartbeat, a client checks to see if a server is still ready to respond after a portion of time where no communication has occurred. A client sends a message with the message size to the site, to which the server would read the message to the message size, and send back the same message to ensure readiness to respond a different message. If the client sent a message size larger than the message it sent, the server would send contiguous data found after the message back to the client, allowing for the client to read server data otherwise hidden. 
 
 Following the discovery of the bug and the amount of systems at risk, a patch was released in April of 2014, though large amounts of sites are still vulnerable to a Heartbleed attack due to improper patching of systems.
 
