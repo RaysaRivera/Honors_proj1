@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buffer Overread Review Questions</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+    .question{
+    	font-weight: 600;
+    }
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label{
+      display: block;
+    }
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverread_lesson" id="home-link">Buffer Overread Review </a></h1>
+    </header>
+    
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+    var myQuestions = [
+      {
+        question: "What is a buffer overread?",
+        answers: {
+          a: "a vulnerability where there is poor or no bounds checking, and overwrites data",
+          b: "a vulnerability in computer systems that occurs when bounds checking responsibility is given to the user rather than programmed into the system"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "The Heartbleed exploit does what?"
+          a: "randomly sends out pieces of data",
+          b: "injection of commands into queries",
+          c: "takes advantage of client-decided bounds checking to read data beyond the buffer given to the server"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "To defend against a buffer overread, a programmer must use strong bounds checking, as well as good coding practices, like putting a null terminator at the end of each c-string manually.",
+        answers: {
+          a: "true",
+          b: "false"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Even though a patch for heatbeat exists, a large amount of system can still at risk of this exploit",
+        answers: {
+          a: "true",
+          b: "false"
+        },
+        correctAnswer: "a"
+      }
+    ]; </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+  </script>
+  </body>
+</html>
