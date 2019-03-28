@@ -38,10 +38,12 @@ Content type verification method of verification relies on the header of the con
 
 ### Image content type verification 
 Image content type verification is the safest method of verification because it generally uses functions associated with the file type to check if it is, in fact, the type of file anticipated. For example, using getimagesize() can confirm if the presumed image is actually an image. A downfall though is that there can be executable code included as part of the image and so it would pass the content verification while still being malicious.
-Change the filename for all uploaded files so that no external input is ever used
-Consider storing uploaded files outside of web document roots
-When using input validation, allowing only alphanumeric characters help to reduce the addition of malicious extensions
-Run code on lowest privilege needed for the task. Ideally do so on individual accounts created for a single task
+
+## Safer Coding Practices
+* Change the filename for all uploaded files so that no external input is ever used
+* Consider storing uploaded files outside of web document roots
+* When using input validation, allowing only alphanumeric characters help to reduce the addition of malicious extensions
+* Run code on lowest privilege needed for the task. Ideally do so on individual accounts created for a single task
 
 # Code of a proper solution: 
 PHP Portion of code
