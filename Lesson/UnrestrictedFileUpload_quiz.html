@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unrestricted File Upload Review Questions</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+    .question{
+    	font-weight: 600;
+    }
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label{
+      display: block;
+    }
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/UnrestrictedFileUpload_lesson" id="home-link">Unrestricted File Upload Review </a></h1>
+    </header>
+    
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+    const myQuestions = [
+    {
+      question: "Which of the following is false about unrestricted upload of file?",
+      answers: {
+        a: "It can exploit local vulnerabilities",
+        b: "It can insert a phishing page or a permanent XSS into the website",
+        c: "It can obtain sensitive data",
+        d: "It can overwrite files/data that other users access",
+        e: "It cannot immediately intercept the system"
+      },
+      correctAnswer: "e"
+    },
+    {
+      question: "Which of the following file types are most dangerous to blindly allow?",
+      answers: {
+        a: ".asp files",
+        b: ".png files",
+        c: ".php",
+        d: "a and b",
+        e: "b and c",
+        f: "a and c"
+      },
+      correctAnswer: "f"
+    },
+    {
+      question: "File extension verification fails because it’s hard to determine which executables should be allowed.",
+      answers: {
+        a: "true",
+        b: "false"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Content type verification is a very secure method of checking against unrestricted file upload",
+      answers: {
+        a: "true",
+        b: "false"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Out of the 3 verifications types explained, which was the safest?",
+      answers: {
+        a: "File type",
+        b: "Content type",
+        c: "Image content"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "What is the vulnerability for image content verification?",
+      answers: {
+        a: "None, it's the safest",
+        b: "here can be executable code included as part of the image and so it would pass the content verification while still being malicious"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "If you need user input files, which of the following shouldn’t be done to ensure secure practices?",
+      answers: {
+        a: "Change the filename for all uploaded files so that no external input is ever used",
+        b: "Run code on lowest privilege needed for the task. Ideally do so on individual accounts created for a single task",
+        c: "When using input validation, allowing only alphanumeric characters help to reduce the addition of malicious extensions",
+        d: "Consider storing uploaded files outside of web document roots"
+      },
+      correctAnswer: "b"
+    }
+  ];
+  </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+  </script>
+  </body>
+</html>
