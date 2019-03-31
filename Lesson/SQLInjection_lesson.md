@@ -16,6 +16,8 @@ Select queries return the selected data from a specific table when the condition
 |Wanda      | Pierce      | WaPi |phoeb3  |81      | Wanda_Pierce@hollywoo.com |
 |Vincent      | Adultman      | ViAd |3kiat  |63      | Vincent_Adultman@hollywoo.com |
 
+[Interactive database](https://raysarivera.github.io/Honors_proj1/Lesson/Websql)
+
 ## Injection attacks
 
 As defined by ibm.com, an injection attack allows "an attacker to inject code into a program or query or inject malware onto a computer in order to execute remote commands that can read or modify a database, or change data on a web site."
@@ -87,4 +89,5 @@ $username = mysqli_real_escape_string($con, $_POST['username']);
 $password = mysqli_real_escape_string($con, $_POST['password']);  
 $sql_command = "select * from users where username = '" . $username; $sql_command .= "' AND password = '" . $password . "'";  
 ```
-[Interactive database](https://raysarivera.github.io/Honors_proj1/Lesson/Websql)
+
+[Test your knowledge](https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_quiz)
