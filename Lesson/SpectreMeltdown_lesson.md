@@ -108,4 +108,4 @@ In mid October of 2018, MIT researchers suggested a approach to preventing Spect
 
 On October 8, 2018, Intel supposedly added hardware and firmware mitigations regarding Spectre and Meltdown vulnerabilities to its latest processors.
 
-[Test your knowledge of Spectre/Meltdown here](https://raysarivera.github.io/Honors_proj1/Lesson/Quiz_trial)
+[Test your knowledge of Spectre/Meltdown here](https://raysarivera.github.io/Honors_proj1/Lesson/SpectreMeltdown_quiz)
