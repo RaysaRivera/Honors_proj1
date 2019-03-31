@@ -96,6 +96,8 @@ PHP Portion of code
 # Real World Example of the attack:
 Earlier this year, it was discovered discovered by researcher James Bercegay that “My Cloud” a popular personal cloud storage unit had this vulnerability. By exploiting this vulnerability Bercegay could replace any file on the server and gain control over the device. The code with the vulnerability appears to be left over from an earlier project called D-Link DNS-320L since there are identical vulnerabilities and misspelled function names, but this project had the vulnerabilities corrected in 2014. 
 
+[Test your knowledge](https://raysarivera.github.io/Honors_proj1/Lesson/UnrestrictedFileUpload_quiz)
+
 <body>
   <p>Got feedback for us? Submit a text file below:</p>
   <input type="file" id="f">
