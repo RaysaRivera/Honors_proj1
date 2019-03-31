@@ -113,3 +113,5 @@ Try to change the password by only submitting a new username.
     }
   </script>
 </body>
+
+[Test your knowledge](https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverread_quiz)
