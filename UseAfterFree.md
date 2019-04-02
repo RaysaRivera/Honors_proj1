@@ -23,12 +23,92 @@ int main(int argc, char* argv[]) {
 	malloc1->vulnfunc = good; // (2)
 	malloc1->vulnfunc(); // (3)	
 
-	free(malloc1); // (2)
-	long *malloc2 = malloc(0); // (3) Zero allocation to confuse on purpose
-	*malloc2 = (long)bad; // (4)
-	malloc1->vulnfunc(); // BOOM! (1)
+	free(malloc1); // (4)
+	long *malloc2 = malloc(0); // (5) Zero allocation to confuse on purpose
+	*malloc2 = (long)bad; // (6)
+	malloc1->vulnfunc(); // BOOM! (7)
 }
 ```
+
+Below is an illustration of the heap during the code run above.
+
+(0)
++----------------------+
+|         ...          |
++----------------------+ <--
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+
+(1)
++----------------------+
+|         ...          |
++----------------------+ <--malloc1
+|      \0     \0       |
++----------------------+ <--
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+
+(2)
++----------------------+
+|         ...          |
++----------------------+ <--malloc1
+|        *good         |
++----------------------+ <--
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+
+(4)
++----------------------+
+|         ...          |
++----------------------+ <--<--malloc1
+|        *good         |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+
+(5)
++----------------------+
+|         ...          |
++----------------------+ <--<--malloc2<--malloc1
+|        *good         |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+
+(6)
++----------------------+
+|         ...          |
++----------------------+ <--<--malloc1
+|        *bad          |
++----------------------+ <--malloc2
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
+|      \0     \0       |
++----------------------+ 
 
 In the example above from [here](https://sensepost.com/blog/2017/linux-heap-exploitation-intro-series-used-and-abused-use-after-free/), a pointer is created to the "good" function, then freed. When the a second pointer is created to point to the bad function, the original pointer is called successfully, though it has been freed. That pointer points to the newly allocated pointer that points to the "bad" function, demonstrating the use-after-free vulnerability. Note that a zero allocation is used to help confuse the program as to where the memory should be allocated.
 
