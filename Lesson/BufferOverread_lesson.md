@@ -1,3 +1,5 @@
+# Buffer Overread
+
 Buffer overread is a vulnerability in computer systems that occurs when bounds checking responsibility is given to the user rather than programmed into the system, allowing for a malicious user to read data that they shouldn't have read access to. This is different from buffer overflow, where a malicious user takes advantage of poor or no bounds checking, and overwrites data they shouldn't have write access to. 
 
 Reading data from a system can allow a user to see code or queries that release information that makes the system vulnerable, either by giving out usernames or passwords of users or by seeing how a system infrastructure is setup. 
@@ -21,6 +23,7 @@ int main(int argc, char **argv) {
     printf("Searching file: %s for the pattern: %s\n", Filename, Pattern);
     Scan_File(Filename, Pattern);
 } 
+```
 
 strncpy does not place a null terminator at the end of the destination string, and if the programmer does not place the null terminator in themselves, a C function would not be able to tell where the end of the string is. In this case, if either buffer of Filename or Pattern are not null terminated, the function Scan_file would not be able to tell where either ends, allowing for the user to read data beyond the end of the buffers in memory. 
 
