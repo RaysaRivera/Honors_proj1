@@ -1,3 +1,5 @@
+# Use After Free
+
 Use After Free is a memory exploit of how languages, specifically older ones, free dynamically allocated memory. Some languages will not sanitize data when freeing memory, but rather opt to simply delete the pointer to the memory itself. However, if another section of memory is allocated over the previously freed memory, this data once again becomes accessible. If this "freed" memory were then to be used for some other pointer, data could be corrupted due to the confusion of values. Attack vectors with use after free come mostly from when the "freed" data is then used for a class pointer, causing function pointers to be scattered around the heap. These function pointers can then be used to inject malicious code into the operating system.
 
 The following is an example of a Use After Free error:
