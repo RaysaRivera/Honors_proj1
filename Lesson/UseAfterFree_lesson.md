@@ -32,13 +32,13 @@ int main(int argc, char* argv[]) {
 
 Below is a representation of the memory for the code above. 
 
+```C
 +----------------------+ <-- 
-
-|                            |
-
+|                      |
 +----------------------+
 |                      |
 +----------------------+
+```
 
 In the example above from [here](https://sensepost.com/blog/2017/linux-heap-exploitation-intro-series-used-and-abused-use-after-free/), a pointer is created to the "good" function, then freed. When the a second pointer is created to point to the bad function, the original pointer is called successfully, though it has been freed. That pointer points to the newly allocated pointer that points to the "bad" function, demonstrating the use-after-free vulnerability. Note that a zero allocation is used to help confuse the program as to where the memory should be allocated.
 
