@@ -1,3 +1,5 @@
+# Denial of Service
+
 Denial of service (DoS) is an attack on a system with a goal of slowing or completely crashing the use of resources for that system. This attack attempts to prevent other users from accessing the system, either stopping work with the system or losing possible sales due to inaccessibility. 
 
 Most often, this attack is done by flooding the system with requests for resources, either keeping users who would usually use these resources from accessing them or crashing the system altogether. Disabling the access to the resources by other means, either by physically disconnecting the system or rerouting traffic to a different direction would also be a denial of service attack. 
