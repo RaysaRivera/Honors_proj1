@@ -1,3 +1,5 @@
+# Buffer Overflow
+
 A classic buffer overflow attack occurs when a buffer has a given size, but the data placed into the buffer, most likely based upon user input, is larger than the given container, allowing the data to overwrite memory not normally accessible. 
 
 Overwriting neighboring data can be used to prevent an application from accessing necessary data, creating a DoS attack, or to inject executable code into an area of memory with execution privilege.
