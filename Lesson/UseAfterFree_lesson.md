@@ -33,6 +33,7 @@ int main(int argc, char* argv[]) {
 Below is a representation of the memory for the code above. 
 
 +----------------------+ <-- 
+
 |         ...          |
 
 +----------------------+
