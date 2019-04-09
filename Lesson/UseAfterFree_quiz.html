@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Use After Free Review Questions</title>
+    <style>
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+    .question{
+    	font-weight: 600;
+    }
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label{
+      display: block;
+    }
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/UseAfterFree_lesson" id="home-link">Use After Free Review </a></h1>
+    </header>
+
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+      const myQuestions = [
+     {
+      question: "Which of the following isn't an effective prevention method for the Use After Free vulnerability?",
+      answers: {
+        a: "overwrite data from pointers once freed",
+        b: "strong memory containment",
+        c: "not letting users have access to dangling pointers",
+        d: "restricting user access from dynamic pointers",
+        e: "input sanitation"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Many cases of the use after free vulnerability are very specific program bugs and will be found rarely",
+      answers: {
+        a: "True",
+        b: "False"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "What kind of allocation is used to confuse the program as to where the memory should be allocated?",
+      answers: {
+        a: "stack",
+        b: "dynamic",
+        c: "zero",
+        d: "static"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "All languages sanitize data when freeing memory",
+      answers: {
+        a: "True",
+        b: "False"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Some languages delete the pointer to the memory itself",
+      answers: {
+        a: "True",
+        b: "False"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "The most famous and long-lasting usage of Use-After-Free was a bug found in what internet browser?",
+      answers: {
+        a: "Firefox",
+        b: "Internet Explorer",
+        c: "Google Chrome",
+        d: "Safari"
+      },
+      correctAnswer: "b"
+    }
+  ];
+    </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+
+  </body>
+</html>
