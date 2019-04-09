@@ -1,5 +1,3 @@
-You are the <b id="demo"></b>th visitor.
-
 # Man in the middle attack                   
 
 A man in the middle attack (MITM) is when an attacker puts themself inside of a conversation between users/applications without being detected. Generally, attackers use MITM attacks to gain secure information or to impersonate one of the parties. 
@@ -34,7 +32,7 @@ When using public key protocol, you can help prevent MITM by requiring identitie
 
 Comcast has been accused of using MITM against its customers by injecting code into pages so that it present banners warning against piracy as well as putting its own ads in place of the ones on the original site. 
 
-
+You are the <b id="demo"></b>th visitor.
 
 
 
