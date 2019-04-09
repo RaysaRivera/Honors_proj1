@@ -91,4 +91,4 @@ As these vulnerabilities have been increasing in recent years, research into def
 The most famous and long-lasting usage of Use-After-Free was a bug found in Internet Explorer 8, 9, and 10. While most Use-After-Frees are found in internet clients and usually fixed quickly, the bug fixed in [MS14-035](https://docs.microsoft.com/en-us/security-updates/SecurityBulletins/2014/ms14-035) was found up to a year before the bug was fixed. A popular and common attack used by malicious sites to crash and possibly extract browser data can be found [here](https://www.exploit-db.com/exploits/33860/). This attack tries to access heap data that was already freed, causing the browser to crash. A good explanation of the attack can be found [here](https://www.purehacking.com/blog/lloyd-simon/an-introduction-to-use-after-free-vulnerabilities).
 
 
-[Test your knowledge](https://raysarivera.github.io/Honors_proj1/Lesson/UseAfterFree_quiz)
+[Test your knowledge](https://raysarivera.github.io/Honors_proj1/Lesson/UseAfterFree_quiz.html)
