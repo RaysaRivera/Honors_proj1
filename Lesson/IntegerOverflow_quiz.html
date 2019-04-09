@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Integer Overflow Review Questions</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+    .question{
+    	font-weight: 600;
+    }
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label{
+      display: block;
+    }
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/IntegerOverflow_lesson" id="home-link">Integer Overflow Review </a></h1>
+    </header>
+    
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+    var myQuestions = [
+      {
+        question: "Typically an integer overflow attacks works by:",
+        answers: {
+          a: "making a integer value that is expected to be negative overflow to a positive value",
+          b: "making a integer value that is expected to be positive overflow to a negative value"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "An int is stored in how many bits?",
+        answers: {
+          a: "4",
+          b: "16",
+          c: "12",
+          d: "8"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "All digital data is stored as a set of binary numbers",
+        answers: {
+          a: "true",
+          b: "false"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Which of the following prevent integer overflows",
+        answers: {
+          a: "ensuring the right data type is used",
+          b: "using a larger data type if the number can go beyond the expected data range",
+          c: "review casting and assignments",
+          d: "all of the above"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "Stagefright is a series of bugs in the Android OS that takes advantage of what data type? ",
+        answers: {
+          a: "MP3",
+          b: "MP4",
+          c: "GIF",
+          d: "WMV"
+        },
+        correctAnswer: "b"
+      }
+    ]; </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+  </script>
+  </body>
+</html>
