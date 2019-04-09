@@ -125,7 +125,7 @@ Try to change the password by only submitting a new username.
     
     function submitClick() {
       var x = document.getElementById("user").elements[0].value;
-      var y = document.getElementById("len").elements[0].value;
+      var y = document.getElementById("len").value;
       var t1 = document.getElementById("tab").rows[1].cells[0];
       var t2 = document.getElementById("tab").rows[1].cells[1];
       var l = x.length - y;
