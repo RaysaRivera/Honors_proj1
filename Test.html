@@ -14,21 +14,30 @@
 
 <body>
   
-  <p>Select file to upload:</p>
+  <!--<p>Select file to upload:</p>
   <input type="file" id="f">
-  <input type="button" value="Upload" name="submit" onclick="clicky()">
+  <input type="button" value="Upload" name="submit" onclick="clicky()">-->
+  
+  <form id="test">
+    Site: <input type="text" name="fname"><br>
+  </form>
+  <button onclick="clicky()">Click me</button>
   
   <p id="demo"></p>
 
   <script type="text/javascript">
     
     function clicky() {
-      var str = document.getElementById("f").value;
+      
+      var str = document.getElementById("test").elements[0].value;
+      document.write(str);
+      
+      /*var str = document.getElementById("f").value;
       var ext = str.substr(str.indexOf(".") + 1);
-      //document.getElementById("demo").innerHTML = ext;
+      document.getElementById("demo").innerHTML = ext;
       if (ext == "exe") {
         document.getElementById("demo").innerHTML = "You have uploaded a possible virus to our server, congrats!";
-      }
+      }*/
     }
   </script>
 </body></html>
