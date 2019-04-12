@@ -104,6 +104,6 @@ document.getElementById("contentholder").textContent = document.baseURI;
     function clicky() {
       
       var str = document.getElementById("test").elements[0].value;
-      window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/' + str;
+      window.location.href = str;
     }
 </script>
