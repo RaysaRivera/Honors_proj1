@@ -95,7 +95,7 @@ document.getElementById("contentholder").textContent = document.baseURI;
 ```
 
 <form id="test">
-    Skip to page https://raysarivera.github.io/Honors_proj1/Lesson/<input type="text" name="fname"><br>
+    Go to: <input type="text" name="fname"><br>
 </form>
 <button onclick="clicky()">Go!</button>
 
@@ -105,12 +105,5 @@ document.getElementById("contentholder").textContent = document.baseURI;
       
       var str = document.getElementById("test").elements[0].value;
       window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/' + str;
-      
-      /*var str = document.getElementById("f").value;
-      var ext = str.substr(str.indexOf(".") + 1);
-      document.getElementById("demo").innerHTML = ext;
-      if (ext == "exe") {
-        document.getElementById("demo").innerHTML = "You have uploaded a possible virus to our server, congrats!";
-      }*/
     }
 </script>
