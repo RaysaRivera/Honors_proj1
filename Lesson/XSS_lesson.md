@@ -93,3 +93,24 @@ DOM-Based example:
 document.getElementById("contentholder").textContent = document.baseURI;    
 </script>
 ```
+
+<form id="test">
+    Skip to page https://raysarivera.github.io/Honors_proj1/Lesson/<input type="text" name="fname"><br>
+</form>
+<button onclick="clicky()">Go!</button>
+
+<script type="text/javascript">
+    
+    function clicky() {
+      
+      var str = document.getElementById("test").elements[0].value;
+      window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/' + str;
+      
+      /*var str = document.getElementById("f").value;
+      var ext = str.substr(str.indexOf(".") + 1);
+      document.getElementById("demo").innerHTML = ext;
+      if (ext == "exe") {
+        document.getElementById("demo").innerHTML = "You have uploaded a possible virus to our server, congrats!";
+      }*/
+    }
+</script>
