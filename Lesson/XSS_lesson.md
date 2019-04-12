@@ -104,6 +104,6 @@ document.getElementById("contentholder").textContent = document.baseURI;
     function clicky() {
       
       var str = document.getElementById("test").elements[0].value;
-      window.location = 'github.com';
+      window.location.assign(str);
     }
 </script>
