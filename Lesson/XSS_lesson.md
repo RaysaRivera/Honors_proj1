@@ -37,7 +37,7 @@ Stored XSS attack (example from OWASP):
 ```
 The JSP code is intended to query a database for an student with the given id.
 
-This type of code is vulnerable since it looks to be a database created from user input. If the data comes from the user and isn’t properly santized or validated then the attack can use those fields to store malicious commands that will execute in the user’s browser. This is unfortunate because it only takes one attacker to jeopardize the information and the systems of every user that has access to the database. Furthermore, attackers aim to attack users who have elevated privileges so that when the victim runs the code, the attacker can gain access to sensitive data or perform attacks that use more privileged operations. 
+This type of code is vulnerable since it looks to be a database created from user input. If the data comes from the user and isn’t properly sanitized or validated then the attack can use those fields to store malicious commands that will execute in the user’s browser. This is unfortunate because it only takes one attacker to jeopardize the information and the systems of every user that has access to the database. Furthermore, attackers aim to attack users who have elevated privileges so that when the victim runs the code, the attacker can gain access to sensitive data or perform attacks that use more privileged operations. 
 
 
 ### DOM-Based XSS
@@ -81,7 +81,7 @@ Web Application Developers should be prioritizing input validation on all user-s
 
 For DOM based XSS attacks, adding server side filters won't stop the attack since it is run on the client side. Specifically, things written after the "#"(hash) isn't sent to the server. Similarly, web application firewalls and regular framework protections also won't protect against DOM based XSS attacks. 
 
-To best prevent DOM based XSS attacks, never use user-controlled input directly into the surce code. Also, when using user input inside < div > elements, use innerText/textContent rather then innerHTML since innerHTML inserts HTML into the code directly whereas innnerText/textContent doesn't allow the insertion of HTML tags.
+To best prevent DOM based XSS attacks, never use user-controlled input directly into the source code. Also, when using user input inside < div > elements, use innerText/textContent rather then innerHTML since innerHTML inserts HTML into the code directly whereas innnerText/textContent doesn't allow the insertion of HTML tags.
 
 ## Code of a proper solution: 
  
