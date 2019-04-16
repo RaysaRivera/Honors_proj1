@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Man-in-the-Middle Review Questions</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+    .question{
+    	font-weight: 600;
+    }
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label{
+      display: block;
+    }
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/Man-in-the-Middle_lesson" id="home-link"> Man-in-the-Middle Review </a></h1>
+    </header>
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+    var myQuestions = [
+      {
+        question: "Generally, attackers use MITM attacks to gain secure information or to impersonate one of the parties",
+        answers: {
+          a: "true",
+          b: "false"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "Which of the following is true?",
+        answers: {
+          a: "HTTPS spoofing is when a user unknowingly visits the fake website and the attacker can then take traffic from the original site. DNS spoofing is when an attacker tricks the victim’s browser into thinking the site is secure",
+          b: "DNS spoofing is when a user unknowingly visits the fake website and the attacker can then take traffic from the original site. HTTPS spoofing is when an attacker tricks the victim’s browser into thinking the site is secure"        },
+        correctAnswer: "b"
+      },
+      {
+        question: "Which of the following is false?",
+        answers: {
+          a: "To prevent MITM attacks, there needs to be secure authentication, encryption protocols and tamper detection",
+          b: "A way to detect tampering is to check response times and determine if there are any abnormalities ",
+          c: "VPNs can be used to ensure a secure environment for sending sensitive information",
+          d: "All of the above",
+          e: "None of the above"
+        },
+        correctAnswer: "e"
+      },
+      {
+        question: "There is no definition solution for Man-in-the-middle attacks, only prevention techniques",
+        answers: {
+          a: "true",
+          b: "false",
+        },
+        correctAnswer: "a"
+      }
+    ]; </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+  </script>
+
+
+  </body>
+</html>
