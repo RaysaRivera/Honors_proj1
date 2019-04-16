@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Privilege Confusion Review Questions</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    body {
+    	font-size: 20px;
+    	font-family: sans-serif;
+    	color: #333;
+    }
+    .question{
+    	font-weight: 600;
+    }
+    .answers {
+      margin-bottom: 20px;
+    }
+    .answers label{
+      display: block;
+    }
+    #submit{
+    	font-family: sans-serif;
+    	font-size: 20px;
+    	background-color: #279;
+    	color: #fff;
+    	border: 0px;
+    	border-radius: 3px;
+    	padding: 20px;
+    	cursor: pointer;
+    	margin-bottom: 20px;
+    }
+    #submit:hover{
+    	background-color: #38a;
+    }
+    </style>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="https://raysarivera.github.io/Honors_proj1/Lesson/PrivilegeConfusion_lesson" id="home-link">Privilege Confusion Review </a></h1>
+    </header>
+    
+    <br>
+    <!--https://www.sitepoint.com/simple-javascript-quiz/-->
+    <div id="quiz"></div>
+    <button id="submit">Get Results</button>
+    <div id="results"></div>
+    <script>
+    const myQuestions = [
+    {
+      question: "Which of the following is a type of privilege confusion?",
+      answers: {
+        a: "CSRF",
+        b: "FTP bounce",
+        c: "Clickjacking",
+        d: "a and b",
+        e: "b and c",
+        f: "a and c"
+        g: "all of the above",
+        h: "none of the above"
+      },
+      correctAnswer: "g"
+    },
+    {
+      question: "Confused deputy refers to using the privileges of a middle system to execute an attack requiring higher privileges",
+      answers: {
+        a: "true",
+        b: "false"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Frame-busting scripts allow a page from being loaded underneath another page",
+      answers: {
+        a: "true",
+        b: "false"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "CRSPR takes advantage of a single click process already used either on the computer itself or a different website",
+      answers: {
+        a: "true",
+        b: "false"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "Whic of the following is false about CSRF?",
+      answers: {
+        a: "It uses less social engineering than clickjacking generally does",
+        b: "It often takes advantage of simple HTTP requests, such as GET, POST, or PUT",
+        c: "These requests will be disguised as a link to family photos, or sales of items a user would buy quickly"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Which of the following is false about prevention techniques?",
+      answers: {
+        a: "Have website programmers require multiple actions to enable potentially malicious requests",
+        b: "Have website programmers require session authentication and public random variables",
+        c: "Have users sign out of important sites like banks",
+        d: "Using strong spam filters and educating users on the potential dangers of links and images in emails"
+      },
+      correctAnswer: "b"
+    }
+  ];
+  </script>
+    <script src="https://raysarivera.github.io/Honors_proj1/Lesson/quiz.js"></script>
+
+  </script>
+  </body>
+</html>
