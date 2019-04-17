@@ -1,21 +1,22 @@
 <style>
 .button {
-  background-color: #4CAF50;
-  border: none;
+  background-color: #4895a8;
   color: white;
-  padding: 15px 25px;
+  padding: 15px 20px;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
 }
 .button:hover {
-  background-color: green;
+  background-color: #285763;
 }
 </style>
 
 # Buffer Overflow
+
 <form>
-<input class="button" type = "button" onclick="window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverflow_quiz'" value = "Quiz Yourself!"> </form>
+<input class="button" type = "button" onclick="window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverflow_quiz'" value = "Test Your Knowledge Here!"> </form>
+
 
 A classic buffer overflow attack occurs when a buffer has a given size, but the data placed into the buffer, most likely based upon user input, is larger than the given container, allowing the data to overwrite memory not normally accessible. 
 
