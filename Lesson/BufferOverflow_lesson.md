@@ -14,7 +14,7 @@
 </style>
 
 # Buffer Overflow
-<button class = "button" name="button" onclick="http://www.google.com">Click me</button>
+<button class = "button" name="button" onclick="https://github.com/RaysaRivera/Honors_proj1/Lesson/BufferOverflow_quiz">Click me</button>
 
 A classic buffer overflow attack occurs when a buffer has a given size, but the data placed into the buffer, most likely based upon user input, is larger than the given container, allowing the data to overwrite memory not normally accessible. 
 
