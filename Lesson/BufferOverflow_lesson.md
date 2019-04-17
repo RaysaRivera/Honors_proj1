@@ -1,5 +1,20 @@
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: green;
+}
+</style>
+
 # Buffer Overflow
-[Click me](http://www.google.com) {: .btn}
+<button class = "button" name="button" onclick="http://www.google.com">Click me</button>
 
 A classic buffer overflow attack occurs when a buffer has a given size, but the data placed into the buffer, most likely based upon user input, is larger than the given container, allowing the data to overwrite memory not normally accessible. 
 
