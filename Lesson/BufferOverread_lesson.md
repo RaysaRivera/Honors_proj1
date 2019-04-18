@@ -139,4 +139,18 @@ Try to change the password by only submitting a new username.
   </script>
 </body>
 
-[Test your knowledge](https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverread_quiz)
+<style>
+.button {
+  background-color: #4895a8;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #285763;
+}
+</style>
+<form>
+<input class="button" type = "button" onclick="window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/BufferOverread_quiz'" value = "Test Your Knowledge Here!"> </form>
