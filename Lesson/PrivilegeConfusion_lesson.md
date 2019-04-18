@@ -15,3 +15,20 @@ Cross-Site Request Forgery (CSRF) is an attack similar to clickjacking, in which
 These attacks rely on the fact that users in the modern era will stay signed in to sites to allow for ease of convenience. Basic prevention includes not staying signed in to important and vulnerable sites such as banks or money transfer websites. The most popular form of CSRF is links and images in emails, so other defenses from these attacks include strong spam filters and user education. Companies now see the need for employee education of email attacks, showing basic users how to spot attacks and what to do and not do in such situations. More technical defenses include website programmers requiring multiple actions to enable malicious requests, and session authentication using cookies and secret random variables. 
 
 In 2008, an attack was discovered that would allow a CSRF attack to enable secret downloading of a torrent file using uTorrent or bittorrent, which then downloaded malicious code. This code then gained administrator access on windows machines to allow for more malicious executions. It is unknown how many systems were subject to this attack, though it is estimated to be in the millions. [Here is the NVD page](https://nvd.nist.gov/vuln/detail/CVE-2008-6586).
+
+
+<style>
+.button {
+  background-color: #4895a8;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #285763;
+}
+</style>
+<form>
+<input class="button" type = "button" onclick="window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/PrivilegeConfusion_quiz'" value = "Test Your Knowledge Here!"> </form>
