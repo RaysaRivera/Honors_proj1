@@ -94,6 +94,26 @@ document.getElementById("contentholder").textContent = document.baseURI;
 </script>
 ```
 
+
+<style>
+.button {
+  background-color: #4895a8;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #285763;
+}
+</style>
+<form>
+<input class="button" type = "button" onclick="window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/XSS_quiz'" value = "Test Your Knowledge Here!"> </form>
+
+
+
+
 <form id="test">
     Go to: <input type="text" name="fname"><br>
 </form>
