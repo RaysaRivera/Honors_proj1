@@ -90,4 +90,18 @@ $password = mysqli_real_escape_string($con, $_POST['password']);
 $sql_command = "select * from users where username = '" . $username; $sql_command .= "' AND password = '" . $password . "'";  
 ```
 
-[Test your knowledge](https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_quiz)
+<style>
+.button {
+  background-color: #4895a8;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #285763;
+}
+</style>
+<form>
+<input class="button" type = "button" onclick="window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/SQLInjection_quiz'" value = "Test Your Knowledge Here!"> </form>
