@@ -110,7 +110,8 @@ document.getElementById("contentholder").textContent = document.baseURI;
 </style>
 <form>
 <input class="button" type = "button" onclick="window.location.href = 'https://raysarivera.github.io/Honors_proj1/Lesson/XSS_quiz'" value = "Test Your Knowledge Here!"> </form> 
-</br>
+
+
 
 
 <form id="test">
